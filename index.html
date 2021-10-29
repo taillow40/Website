@@ -1,10 +1,15 @@
 <Head>Welcome to Sam's Website
-    <script type="text/javascript" src="js\basicJs.js"></script>
+    
+   
+    <script type="module" src="js\basicJs.mjs"></script>
 </Head>
 <Body>
     <div> 
         Some Text Or Something
     </div> 
+    <div id="ChangingDiv">
+        Woah the text changes!
+    </div>
 
 
 <form>
@@ -12,6 +17,14 @@
     <input type="text" id="fname" name="fname"><br>
     <label for="lname">Last name:</label><br>
     <input type="text" id="lname" name="lname">
+    <div>
+        <button type="button" onclick="useInput()">Submit</button> 
+    </div>
+    
   </form>
 <button type="button" onclick="myFunction()">Change Color</button>
+<button type="button" onclick="changeText()">Change Text!</button>
+<div id="nameOutput">
+
+</div>
 </Body>
