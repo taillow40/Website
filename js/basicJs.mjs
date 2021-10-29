@@ -158,7 +158,9 @@ function startListener(){
   }
   function ChopUpUrl(url){
     
-    return url.split('html')[1] + "q";
+    var strs = url.split('/');
+    return strs[strs.length -1] + "q";
+    
   }
   function changeQuestionForPage(gotQuestion){
     
