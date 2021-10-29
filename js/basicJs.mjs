@@ -27,6 +27,7 @@ const firebaseConfig = {
   const database = getDatabase(app);
   var numberOfQuestions;
   initialize();
+  startListener();
   //console.log("questions" + numberOfQuestions);
 /*
   const analytics = getAnalytics(app);
@@ -114,9 +115,14 @@ function getRandomQuestion(){
 });
 }
 function startListener(){
-  const db = getDatabase();
-  const starCountRef = ref(db, 'posts/' + postId + '/starCount');
+  var qBox = document.getElementById("Question");
+  var hlBox = document.getElementById("HighLow");
+  if(qBox == undefined || hlBox == undefined){
+    return;
+  }
+  const starCountRef = ref(database, 'question/'+ ChopUpUrl(window.location.href));
   onValue(starCountRef, (snapshot) => {
+    
   const data = snapshot.val();
   getNewQuestionAndValue(data);
 });
@@ -152,14 +158,14 @@ function startListener(){
   function getNewQuestionAndValue(data){
     var qBox = document.getElementById("Question");
     var hlBox = document.getElementById("HighLow");
-    qBox.innerHTML = data;
-    hlBox = data;
+    qBox.innerHTML = data.string;
+    hlBox.innerHTML = data.flip;
 
   }
   function ChopUpUrl(url){
     
     var strs = url.split('/');
-    return strs[strs.length -1] + "q";
+    return strs[strs.length -1].replaceAll('.','') + "q";
     
   }
   function changeQuestionForPage(gotQuestion){
@@ -181,7 +187,7 @@ function startListener(){
       
       
       changeQuestionForPage(snapshot.val().string);
-      
+      startListener();
       
     } else {
       console.log("No data available");
@@ -193,5 +199,17 @@ function startListener(){
   
   }
   window.getRandomQuestionString = getRandomQuestionString;
+  updateQuestions();
+  function updateQuestions(){
+    var strs="How many bones have you broken?\nHow many cousins do you have?\nHow many states have you been to?\nHow long since your last meal (hours)?\nHow long since you went swimming (days)?\nHow many movies have you watched in the last week?\nHow many languages do you know how to say Hello in?\nHow many pillows are currently on your bed?\nHow much sleep did you get last night (hours)?\nHow many different mirrors have you looked in in the last 24 hours?\nHow tall are you (inches)?\nHow fast can you type in wpm?\nHow many things are on your task bar\nHow many things are on your desktop\nHow many discord servers are you on, 0 if no discord\nHow many pets have you had?\nHow long since you had cake (days)?\nHow many hoodies do you own?\nHow many shoes do you own?\nHow many languages do you speak?\nHow many different sports have you been on a team for?\nHow many classes have you skipped this semester?\nHow many pieces of clothing are you wearing right now?\nHow long since your last haircut (days)\nHow long did you spend making breakfast this morning (minutes)\nHow long did you spend in bed before getting up this morning (minutes)\nHow long did you spend in your home between waking up and leaving for the first time today (minutes)\nHow many rings do you own?\nHow many monitors are on your desk?\nHow many lights are in your room?\nHow long since you read a book (days)?\nHow long can you hold your breath (seconds)?\nHow many pokemon can you name?\nHow many apps do you have on your phone?\nHow many pages do you have on your phone?\n".split("\n");
+
+
+    for(var i = 0; i < strs.length; i += 1){
+      set(ref(database, 'questions/'+i), {
+        string: strs[i]
+        
+      });
+    }
+  }
   
 
