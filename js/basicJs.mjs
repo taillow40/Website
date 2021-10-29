@@ -180,6 +180,7 @@ function startListener(){
   window.changeQuestionForPage = changeQuestionForPage;
   window.getNewQuestionAndValue = getNewQuestionAndValue;
   function getRandomQuestionString(){
+    console.log("Hi this ran");
     const dbRef = ref(getDatabase());
     
     get(child(dbRef, `questions/` + (randomQuestionInt(numberOfQuestions) + 1))).then((snapshot) => {
