@@ -212,5 +212,9 @@ function startListener(){
       });
     }
   }
+  function printSomething(){
+    console.log("Something");
+  }
+  window.printSomething = printSomething;
   
 
