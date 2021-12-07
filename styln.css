@@ -4,10 +4,10 @@ body {
 
 #QuestionBox {
 
-  width: 65%;
-  padding-top: 10vw;
-  height: 70%;
-  font-size: 4.5vw;
+  width: 75%;
+  padding-top: 5vw;
+  height: 50%;
+  font-size: 3.2vw;
   margin: auto;
 
 
@@ -17,16 +17,18 @@ body {
   text-align: center;
 
   width: 100%;
-  height: 20%;
+  height: 10%;
+  padding-bottom: 10vh;
 
 }
 
 #HighLow {
   text-align: center;
+  padding-top: 3vw;
   width: 100%;
   height: 30%;
-  font-size: 3.5vw;
-
+  font-size: 2vw;
+  padding-bottom: 20vh;
 
 }
 
@@ -34,7 +36,7 @@ body {
 
   width: 100%;
   height: 25%;
-  font-size: 5.5vw;
+  font-size: 4.5vw;
   text-align: center;
 
 
@@ -51,4 +53,26 @@ body {
 #InstructionsImg {
   width: 5%;
   height: 5%;
+}
+
+#Instructions {
+
+  border-radius: 1vw;
+  border-style: solid;
+  text-decoration: none;
+  border-color: black;
+  border-width: 1;
+  color: black;
+  background: rgba(100, 180, 230, 1.0);
+  width: 11vw;
+  height: 3.5vh;
+  text-align: center;
+  font-size: 2.5vh;
+
+}
+
+#Link {
+  text-decoration: none;
+  color: black;
+
 }
