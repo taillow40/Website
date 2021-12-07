@@ -1,0 +1,33 @@
+body {
+    background-color: #8fddff;
+}
+
+#Title {
+    font-weight: bold;
+    padding: .25vw .50vw .15vw 1vw;
+    margin: auto;
+    text-align: center;
+    font-size: 6vw;
+
+}
+
+#Tag {
+    margin: auto;
+    text-align: center;
+    padding: 0vw 0vw 5vw 0vw;
+    font-size: 3vw;
+}
+
+#Instructions {
+    padding: .25vw .50vw .15vw 1vw;
+
+}
+
+#block {
+    margin: auto;
+    border: gray;
+    font-size: 2.5vw;
+    width: 75%;
+    text-align: center;
+
+}

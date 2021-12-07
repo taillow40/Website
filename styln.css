@@ -1,32 +1,54 @@
 body {
-    background-color: lightblue;
-  }
-  #QuestionBox {
-    background-color: lightgray;
-    width:100%;
-    height:70%;
-    font-size: 5.5vw;
-    
-    border: 3px solid green;
-    
-  }
-  #Question{
-    text-align: center;
-    background-color: lightgreen;
-    width:100%;
-    height:70%;
-  }
-  #HighLow{
-    text-align: center;
-    width:100%;
-    height:30%;
-    background-color: lightseagreen;
-  }
-  #MakeQuestion {
-    background-color: lightpink;
-    width:100%;
-    height:20%;
-    font-size: 5.5vw;
-    text-align: center;
-    border: 3px solid green;
-  }
+  background-color: #7fcdff;
+}
+
+#QuestionBox {
+
+  width: 65%;
+  padding-top: 10vw;
+  height: 70%;
+  font-size: 4.5vw;
+  margin: auto;
+
+
+}
+
+#Question {
+  text-align: center;
+
+  width: 100%;
+  height: 20%;
+
+}
+
+#HighLow {
+  text-align: center;
+  width: 100%;
+  height: 30%;
+  font-size: 3.5vw;
+
+
+}
+
+#MakeQuestion {
+
+  width: 100%;
+  height: 25%;
+  font-size: 5.5vw;
+  text-align: center;
+
+
+
+}
+
+#ButtonItself {
+  background: rgba(100, 180, 230, 1.0);
+  border-radius: 1vw;
+  font-size: 5.5vw;
+
+}
+
+#InstructionsImg {
+  width: 5%;
+  height: 5%;
+}
