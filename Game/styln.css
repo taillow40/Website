@@ -1,0 +1,78 @@
+body {
+  background-color: #7fcdff;
+}
+
+#QuestionBox {
+
+  width: 75%;
+  padding-top: 5vw;
+  height: 50%;
+  font-size: 3.2vw;
+  margin: auto;
+
+
+}
+
+#Question {
+  text-align: center;
+
+  width: 100%;
+  height: 10%;
+  padding-bottom: 10vh;
+
+}
+
+#HighLow {
+  text-align: center;
+  padding-top: 3vw;
+  width: 100%;
+  height: 30%;
+  font-size: 2vw;
+  padding-bottom: 20vh;
+
+}
+
+#MakeQuestion {
+
+  width: 100%;
+  height: 25%;
+  font-size: 4.5vw;
+  text-align: center;
+
+
+
+}
+
+#ButtonItself {
+  background: rgba(100, 180, 230, 1.0);
+  border-radius: 1vw;
+  font-size: 5.5vw;
+
+}
+
+#InstructionsImg {
+  width: 5%;
+  height: 5%;
+}
+
+#Instructions {
+
+  border-radius: 1vw;
+  border-style: solid;
+  text-decoration: none;
+  border-color: black;
+  border-width: 1;
+  color: black;
+  background: rgba(100, 180, 230, 1.0);
+  width: 11vw;
+  height: 3.5vh;
+  text-align: center;
+  font-size: 2.5vh;
+
+}
+
+#Link {
+  text-decoration: none;
+  color: black;
+
+}
