@@ -1,35 +1,62 @@
 <head >
-    <link rel="stylesheet" href="index.css">
+    
+    <link rel="stylesheet" href="stylin/index.css">
+    <link rel="stylesheet" href="stylin/defaultStyles.css">
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="loadHeader.js"></script>
+    
+    
 </head>
 
 <body>
 <div id="header"></div>
 
 <body class="body" style="margin:0">
-    
+    <div id='headerImage'>
+        <div class="imageBlock" style ='background-image: url("/assets/UnderwaterBackground.JPG"); background-size: cover; background-position-y: 5%;'> </div>
+    </div>
+    <div class ="content">
+        
+    </div>
     <div class="content"> 
-        <div class="title">Samuel Tomlinson</div>
-        <div class="picture"></div>
-        <div class="Bio" style="font-size: 2REM">
-             <div style="max-width: 50REM;">I am a Computer Science student focusing on Software Engineering at Northeastern University.</div>  <img src="MyFaceProfilePicture.jpg" alt="Me!" style="height: 10REM; padding-left: 1REM;"> <br>
-            GPA: 3.9/4.0, Dean's list
-            
-            Computer Science Classes: 
-            (Whatever I have in the new semester)
-            Object Oriented Design
-            Java class teaching the fundamentals of good large scale program Design
-            Computer Systems (Graduate Level)
-            C based class about what an operating system is along with other low level hardware,software interactions
-            Mathematics of Data Models
-            Python based class about how to use data and basic machine learning
-            Logic and Computation
-            Lisp based class about proving mathematical theorems Digitally
-            Fundamentals of Computer Science
-            Functional programming classes teaching the very basics of computer science
+        
+            <a href="assets/Resume.pdf" target="_blank" id="resumeLink"></a>
+        
+        <div class = "PageBlocks" style="top:36vh; height: 90vh;">
 
-                     <img src="HVPE.png" alt="HVPE">Most recently I worked for the Help Desk Team at Harbourvest Private Equity. <br>
+        
+        <div class="tallBlock" style="top:50%; left:35%" onclick="window.location.href='/pages/about.html'"> 
+            <div class="pageBlock-top" style='height:90%'><div class="imageBlock" style='background-image: url("/assets/8.5x11ShortHair2022.png");'></div></div>
+            <div class="pageBlock-bottom" style='height:10%; top:92%;'>Learn more about me! </div>
+        </div>
+        <div class="tallBlock" style="top:50%; left:65%;" onclick="document.getElementById('resumeLink').click()"> 
+            <div class="pageBlock-top" style='height:90%; border: 1px solid black'><div class ="imageBlock" style='background-image: url("/assets/Resume.png");'></div></div>
+            <div class="pageBlock-bottom" style='height:10%; top:92%;'>Resume</div>
+        </div>
+    </div>
+
+
+       <div class="PageBlocks" style="top:120vh; height: 40vh;"> 
+        
+        <div class="pageBlock" style="top:50%; left:25%"> 
+            <div class="pageBlock-top" ><div class="imageBlock" style='background-image: url("/assets/HVPE.png");'></div></div>
+            <div class="pageBlock-bottom">Automation for the Help Desk at Harbourvest Private Equity. </div>
+        </div>
+        <div class="pageBlock" style="top:50%; left:50%"> 
+            <div class="pageBlock-top"><div class ="imageBlock" style='background-image: url("/assets/NortheasternSymbol.png");'></div></div>
+            <div class="pageBlock-bottom">Northeastern University: BSCS Computer Science</div>
+        </div>
+        <div class="pageBlock" style="top:50%; left:75%"> 
+            <div class="pageBlock-top" ><div class="imageBlock" style='background-image: url("/assets/BlockGameIcon.png");'></div></div>
+            <div class="pageBlock-bottom">World of Blocks </div>
+        </div>
+        </div>
+       <!-- <div class="Bio" style="font-size: 2REM">
+             <div style="max-width: 50REM;"> /div>  <img src="MyFaceProfilePicture.jpg" alt="Me!" style="height: 10REM; padding-left: 1REM;"> <br>
+            
+            
+
+            Most recently I worked Automation for the Help Desk Team at Harbourvest Private Equity. <br>
 
             Here my projects included a powershell script to automate the approval and removal process of O365 licenses from contractors,
             
@@ -37,28 +64,21 @@
 
             fixing BSOD issues to adjusting users timezones in outlook. Through this, I was able to meet a huge number of people within the company and I really enjoyed talking to everyone and asking about what they were working on. 
             Since it is a private equity company, a lot of the financial terms began as very foreign to me but I gradually got an understanding of them. 
-
+            
+            
             Outside of harbourvest I also work 2-3 hours a week as a professional tutor for Academics etc. I've worked here since august of 2020 and through this, I have 
             I have gained a strong understanding not just of how to teach, but also how to teach someone how to do something with a deep understanding, and also how to give a brief overview.
 
             In the past I also worked as a CPAs assitant doing '' and as a code sensei during a summer camp at Code Ninjas, teaching kids the fundamentals of programming.
 
-            Through my studies and personal projects I have learned a variety of programming languages, and you can find a list of the languages and what I used them for here:
-            Python: various scripts, including basic Artificial Intelligence 
-            C#: World of Blocks, Cursed
-            C: Linux FileSystem, Linux Shell
-            Java: Image Processor
-            Javascript: WebScraper, Food Scheduler
-            Lua: Minecraft Robots
-            Html/css: Here!
-            ACL2 (Applicable Common Lisp): Digitally proving mathematical theorems
+           
 
 
             You can find a list of the projects 
             In my personal time, I play for my schools Overwatch esport team, and while back in california enjoy surfing and underwater photography, 
             You can see some of my best pictures here:
 
-            You can find my Resume here: 
+            You can find my Resume here:  -->
         </div>
     </div>
 </body>
