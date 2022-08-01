@@ -4,6 +4,7 @@
     margin: auto;
     background-color: #ffffff;
 
+
 }
 
 .title {
@@ -33,6 +34,13 @@
     position: absolute;
     transform: translate(-50%, -50%);
     cursor: pointer;
+}
+
+.wideBlock {
+    width: 88vw;
+    height: 50vh;
+    position: relative;
+
 }
 
 .pageBlock-top {

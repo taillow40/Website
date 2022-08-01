@@ -1,57 +1,110 @@
-<head >
-    
+<head>
+
     <link rel="stylesheet" href="stylin/index.css">
     <link rel="stylesheet" href="stylin/defaultStyles.css">
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="loadHeader.js"></script>
-    
-    
+
+
 </head>
 
 <body>
-<div id="header"></div>
+    <div id="header"></div>
 
-<body class="body" style="margin:0">
-    <div id='headerImage'>
-        <div class="imageBlock" style ='background-image: url("/assets/UnderwaterBackground.JPG"); background-size: cover; background-position-y: 5%;'> </div>
-    </div>
-    <div class ="content">
-        
-    </div>
-    <div class="content"> 
-        
+    <body class="body" style="margin:0">
+        <div id='headerImage'>
+            <div class="imageBlock"
+                style='background-image: url("/assets/UnderwaterBackground.JPG"); background-size: cover; background-position-y: 5%;'>
+            </div>
+        </div>
+
+        <div class="content">
+
             <a href="assets/Resume.pdf" target="_blank" id="resumeLink"></a>
-        
-        <div class = "PageBlocks" style="top:36vh; height: 90vh;">
 
-        
-        <div class="tallBlock" style="top:50%; left:35%" onclick="window.location.href='/pages/about.html'"> 
-            <div class="pageBlock-top" style='height:90%'><div class="imageBlock" style='background-image: url("/assets/8.5x11ShortHair2022.png");'></div></div>
-            <div class="pageBlock-bottom" style='height:10%; top:92%;'>Learn more about me! </div>
-        </div>
-        <div class="tallBlock" style="top:50%; left:65%;" onclick="document.getElementById('resumeLink').click()"> 
-            <div class="pageBlock-top" style='height:90%; border: 1px solid black'><div class ="imageBlock" style='background-image: url("/assets/Resume.png");'></div></div>
-            <div class="pageBlock-bottom" style='height:10%; top:92%;'>Resume</div>
-        </div>
-    </div>
+            <div class="PageBlocks" style="top:0vh; height: 90vh; ">
 
 
-       <div class="PageBlocks" style="top:120vh; height: 40vh;"> 
-        
-        <div class="pageBlock" style="top:50%; left:25%"> 
-            <div class="pageBlock-top" ><div class="imageBlock" style='background-image: url("/assets/HVPE.png");'></div></div>
-            <div class="pageBlock-bottom">Automation for the Help Desk at Harbourvest Private Equity. </div>
-        </div>
-        <div class="pageBlock" style="top:50%; left:50%"> 
-            <div class="pageBlock-top"><div class ="imageBlock" style='background-image: url("/assets/NortheasternSymbol.png");'></div></div>
-            <div class="pageBlock-bottom">Northeastern University: BSCS Computer Science</div>
-        </div>
-        <div class="pageBlock" style="top:50%; left:75%"> 
-            <div class="pageBlock-top" ><div class="imageBlock" style='background-image: url("/assets/BlockGameIcon.png");'></div></div>
-            <div class="pageBlock-bottom">World of Blocks </div>
-        </div>
-        </div>
-       <!-- <div class="Bio" style="font-size: 2REM">
+                <div class="tallBlock" style="top:50%; left:35%" onclick="window.location.href='/pages/about.html'">
+                    <div class="pageBlock-top" style='height:90%'>
+                        <div class="imageBlock" style='background-image: url("/assets/8.5x11ShortHair2022ReallySmall.png");'></div>
+                    </div>
+                    <div class="pageBlock-bottom" style='height:10%; top:92%;'>Learn more about me! </div>
+                </div>
+
+
+                <div class="tallBlock" style="top:50%; left:65%;"
+                    onclick="document.getElementById('resumeLink').click()">
+                    <div class="pageBlock-top" style='height:90%; border: 1px solid black'>
+                        <div class="imageBlock" style='background-image: url("/assets/Resume.png");'></div>
+                    </div>
+                    <div class="pageBlock-bottom" style='height:10%; top:92%;'>Resume</div>
+                </div>
+            </div>
+
+            <div class="wideBlock" style="left:6%;">
+                
+                <div class="imageBlock"
+                    style='background-image: linear-gradient(180deg, rgb(0, 48, 102) 90%, rgb(0, 56, 82) 110%); background-size: cover;'>
+                </div>
+                <div style=" color:white; z-index:1; position:absolute; top:35%; left: 5%; font-weight:bold; font-size:300%">
+                    Projects
+                </div>
+                
+                <div style="color:rgb(137, 166, 255); position:absolute; top:45%; left: 5%; font-size:150%; padding:10px">
+                    View All >
+                </div>
+                <div style="color: rgb(151, 151, 151);text-align:center;" >
+                    
+                    <div class="projectBlock" style="top:50%; left:45%;">
+                        <div class="pageBlock-top" style="height:70%;">
+                            <div class="imageBlock" style='background-image: url("/assets/RGBLEDAPI.jfif");'></div>
+                        </div>
+                        <div class="pageBlock-bottom" style="top:80%">LED API</div>
+                    </div>
+                    <div class="projectBlock" style="top:50%; left:65%;">
+                        <div class="pageBlock-top" style="height:70%;">
+                            <div class="imageBlock" style='background-image: url("/assets/PersonalDashboard.png");'></div>
+                        </div>
+                        <div class="pageBlock-bottom" style="top:80%">Personal Dashboard</div>
+                    </div>
+                    <div class="projectBlock" style="top:50%; left:85%;">
+                        <div class="pageBlock-top" style="height:70%;">
+                            <div class="imageBlock" style='background-image: url("/assets/BlockGameIcon.png");'></div>
+                        </div>
+                        <div class="pageBlock-bottom" style="top:80%">World of Blocks </div>
+                    </div>
+                    
+                    
+                </div>
+                
+
+               
+            </div>
+
+
+            <div class="PageBlocks" style="top:0vh; height: 40vh;">
+
+                <div class="pageBlock" style="top:50%; left:25%">
+                    <div class="pageBlock-top">
+                        <div class="imageBlock" style='background-image: url("/assets/HVPE.png");'></div>
+                    </div>
+                    <div class="pageBlock-bottom">Automation for the Help Desk at Harbourvest Private Equity. </div>
+                </div>
+                <div class="pageBlock" style="top:50%; left:50%">
+                    <div class="pageBlock-top">
+                        <div class="imageBlock" style='background-image: url("/assets/NortheasternSymbol.png");'></div>
+                    </div> 
+                    <div class="pageBlock-bottom">Northeastern University: BSCS Computer Science</div>
+                </div>
+                <div class="pageBlock" style="top:50%; left:75%">
+                    <div class="pageBlock-top">
+                        <div class="imageBlock" style='background-image: url("/assets/BlockGameIcon.png");'></div>
+                    </div>
+                    <div class="pageBlock-bottom">Whatever my second experience thing is </div>
+                </div>
+            </div>
+            <!-- <div class="Bio" style="font-size: 2REM">
              <div style="max-width: 50REM;"> /div>  <img src="MyFaceProfilePicture.jpg" alt="Me!" style="height: 10REM; padding-left: 1REM;"> <br>
             
             
@@ -80,5 +133,5 @@
 
             You can find my Resume here:  -->
         </div>
-    </div>
-</body>
+        </div>
+    </body>

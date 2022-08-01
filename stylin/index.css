@@ -5,16 +5,25 @@
 }
 
 #headerImage {
-    position: absolute;
+    position: relative;
     height: 30%;
     width: 100%;
 
 }
 
 .PageBlocks {
-    position: absolute;
-    top: 50vh;
+    position: relative;
+    outline: 0px green solid;
     height: 40vh;
     width: 100vw;
 
+}
+
+.ProjectBlock {
+    width: 17%;
+    height: 70%;
+    outline: 1px white solid;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
 }
