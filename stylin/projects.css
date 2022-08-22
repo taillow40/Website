@@ -1,3 +1,91 @@
 .barProjects {
     text-decoration-line: underline !important;
 }
+
+.content {
+    background-color: rgb(234, 237, 255);
+    width: 80%;
+}
+
+.projectBox {
+    outline: 1px solid black;
+    padding: 2%;
+    position: relative;
+    padding-left: 15%;
+    height: 25%;
+}
+
+.projectBox_Header {
+    font-size: 200%;
+    font-weight: bold;
+    padding-top: 2%;
+
+}
+
+.projectBox_Image {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transform: translate(-50%, -50%);
+    height: 75%;
+    width: 30%;
+    left: 70%;
+    top: 45%;
+    position: absolute;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.projectBox_ImageSelector {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    width: auto;
+    height: 100%;
+    font-size: 70%;
+    text-align: center;
+
+
+
+
+}
+
+.projectBox_SelectorButton {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 20%;
+    outline: none;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    font-weight: bold;
+    color: darkblue;
+    font-size: 150%;
+    cursor: pointer;
+}
+
+.projectBox_SelectorButton.left {
+    left: 10%;
+
+}
+
+.projectBox_SelectorButton.right {
+    left: 90%;
+
+}
+
+
+.projectBox_ImageSelectorThings {
+
+    position: absolute;
+    left: 70%;
+    top: 95%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    height: 5%;
+}
+
+.projectBox_Content {
+    width: 40%;
+    padding-top: 1%;
+}

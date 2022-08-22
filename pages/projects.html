@@ -3,6 +3,7 @@
     <link rel="stylesheet" href="/stylin/projects.css">
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="/loadHeader.js"></script>
+    <script src="/pages/projects.js"></script>
 </head>
 
 <body>
@@ -12,63 +13,162 @@
 
         <div class="content">
             <div class="title">Projects</div>
-            <div class="name" href="imageprocessor.html">ImageProcessor</div>
-            
-                <div class="name" href=""></div>
-                    Overwatch rank webscraper
-                    Most overwatch tournaments are hosted on a website called gamebattles, 
-                    and thrpigh this website we are able to find the usernames of the players on the enemy teams. What my webscraper does
-                    is take a team link from this website, and then it scrapes the usernames from this link, and then references a data base called Overbuff
-                    that keeps track of the ranks of all overwatch players. Thus my webscraper is able to create a short summary of teams we'll be facing in tournaments.
-                    <div></div>
-                    World of Blocks
-                    World of blocks is a game designed in unity for ios. The basic premise of the game is that players are trying to knock all blocks off of a platform.
-                    It is similar to angry brids in that progression through the game is in the form of 
-                    individual levels, and as you progress further more mechanics are added to the game that make the levels more complex, though not neccessarily more difficult.
-                    I've also created a browser version of the game that can be played here:
-                    <div></div>
-                    Disabled Users Microsoft 365 licenses
-                    While working at harbourvest there was a constant shortage of office 365 e5 licenses, but the company was hesitant to buy more because
-                    they compared the number of licenses to the number of active users, and believed we should have plenty of licenses We had not been reclaiming 
-                    the licenses from employees no longer working at the firm due to the tedious process of needing to open a ticket and request manager approval for 
-                    every single license that needed to be reclaimed. 
-        
-                    To combat this, I along with a member of my team wrote a script in powershell that automated this process from start to finish. 
-                    First, it generates a list of users with office licenses that have not signed in for more than 60 days, along with their managers. 
-                    Next, it interfaces with solarwinds samanage to create a ticket for each user and automatically requests the managers approval (Making sure that it could handle users that don't have managers or aren't setup properly)
-                    Finally, it continuously checks the created tickets for manager approval, and when they get approved for removal, it interfaces with Azure Active Directory to remove the license.
-                    
-                    The process is run using a UNKNOWN SCHEDULER and is totally automatic and still in use. 
-                    <div></div>
-                    Linux File System
-                    In Linux, I created a file system in the user space using fuse that was a basic recreation of the linux file system using inodes to map file names to directories.
-        
-                    <div></div>
-                    Food Planning tool
-                    Using google sheets I created a tool that would help me schduele and plan the meals I'm cooking. It is a sheet split into 2 main pages.
-                    First, the schedule for the week. This is where I write down what I want to cook each day of the week. It then uses references the options page
-                    to fill in the ingredients I'll need along with how long it took me to cook it the last time I made it. 
-                    The sheet also includes more pages to enhance the functionality. 
-                    Pantry can be used to keep track of what is currently in the frige and pantry and flag anything that will need to be bought for the upcoming week.
-                    Menu is a graphical page with a formatted version of each meal to help me choose what I want to cook.
-                    Settings is a page that gives some customization for various settings.
-                    <div></div>
-                    Linux Shell
-                    in linux in C I built a simple shell that allows for the execution of commands. It provided support for command execution,
-                    i/o redirection, and pipes, as well as sequential, conditional, and background command execution. 
-                    <div></div>          
-                      Tech Share 
-                        For a hackathon I competed on a team of 4 to create a website that helped connect people together so they could share old technology 
-                        such as the Wii. I programmed on the backend setting up a database using firebase. 
-                                    <div></div>
-                    Cursed
-                    Along with 3 other people I competed in a week long Game Jam for Northeastern. Our game was cursed, and the basic premise was that we needed to cooperate with the main character 
-                    to help them navigate through a variety of games. As the game progessed, it got more and more difficult to play. There would be "curses" on the player
-                    and things would start happening, the mouse would jump around, programs wouldn't cooperate, and the game became more difficult to play.
-                    <div></div>
-                    Battlecode
-                    I competed along with 3 other people in MIT's battle code 2022. During this competition we programmed rules based AI to play a real time strategy game. 
-        
+
+            <div class="projectBox" id="Personal Dashboard">
+                <div class="projectBox_Header">Personal Dashboard</div>
+                <div class="projectBox_ImageContainer">
+                    <div class="projectBox_Image"></div>
+                    <div class=projectBox_ImageSelectorThings>
+                        <div class="projectBox_ImageSelector"></div>
+                        <button class="projectBox_SelectorButton left">&lt</button>
+                        <button class="projectBox_SelectorButton right">&gt</button>
+                    </div>
+                </div>
+
+                <div class="projectBox_Content">
+                    <ul>
+                        <li>A website that displays my personal tasks and health numbers for the day, reminding me when
+                            there are things that need to be done. </li>
+                        <li>NodeJS backend using firebase as well as google calendar integration. </li>
+                        <li>React frontend, it was my first project in React and taught me about useState and useEffect.
+                        </li>
+                    </ul>
+                    <script>
+                        SetupButtons(["/assets/HVPE.png", "/assets/PersonalDashboard.png"], "Personal Dashboard")
+                    </script>
+
+                </div>
+            </div>
+            <div class="projectBox" id="Led Interface">
+                <div class="projectBox_Header">Led Interface</div>
+                <div class="projectBox_ImageContainer">
+                    <div class="projectBox_Image"></div>
+                    <div class=projectBox_ImageSelectorThings>
+                        <div class="projectBox_ImageSelector"></div>
+                        <button class="projectBox_SelectorButton left">&lt</button>
+                        <button class="projectBox_SelectorButton right">&gt</button>
+                    </div>
+                </div>
+
+                <div class="projectBox_Content">
+                    <ul>
+                        <li>A basic Led Controller that uses a Raspberry Pi to respond to HTTP requests</li>
+                        <li>Uses NodeJS to host a basic server off the Raspberry Pi</li>
+                        <li>Simple electronic circuit responds to outputs from the Raspberry Pi and converts them with MOSFETs</li>
+                        
+                        
+                    </ul>
+                    <script>
+                        SetupButtons(["/assets/RGBInterface.png","/assets/RGBInterface2.png", "/assets/RGBBreadboard.JPG"], "Led Interface")
+                    </script>
+
+                </div>
+            </div>
+            <div class="projectBox" id="Recipe Book">
+                <div class="projectBox_Header">Recipe Book</div>
+                <div class="projectBox_ImageContainer">
+                    <div class="projectBox_Image"></div>
+                    <div class=projectBox_ImageSelectorThings>
+                        <div class="projectBox_ImageSelector"></div>
+                        <button class="projectBox_SelectorButton left">&lt</button>
+                        <button class="projectBox_SelectorButton right">&gt</button>
+                    </div>
+                </div>
+
+                <div class="projectBox_Content">
+                    <ul>
+                        <li>A google sheets page that I use as a recipe book </li>
+                        <li>Uses google scripts to automatically combine and list the ingredients I'll need for the days meals</li>
+                        
+                    </ul>
+                    <script>
+                        SetupButtons(["/assets/RecipeBook_Options.png", "/assets/RecipeBook.png", "/assets/RecipeBook_Basic.png"], "Recipe Book")
+                    </script>
+
+                </div>
+            </div>
+
+
+
+
+            <div class="name" href=""></div>
+            Overwatch rank webscraper
+            Most overwatch tournaments are hosted on a website called gamebattles,
+            and through this website we are able to find the usernames of the players on the enemy teams. What my
+            webscraper does
+            is take a team link from this website, and then it scrapes the usernames from this link, and then
+            references a data base called Overbuff
+            that keeps track of the ranks of all overwatch players. Thus my webscraper is able to create a short
+            summary of teams we'll be facing in tournaments.
+            <div></div>
+            World of Blocks
+            World of blocks is a game designed in unity for ios. The basic premise of the game is that players are
+            trying to knock all blocks off of a platform.
+            It is similar to angry brids in that progression through the game is in the form of
+            individual levels, and as you progress further more mechanics are added to the game that make the levels
+            more complex, though not neccessarily more difficult.
+            I've also created a browser version of the game that can be played here:
+            <div></div>
+            Disabled Users Microsoft 365 licenses
+            While working at harbourvest there was a constant shortage of office 365 e5 licenses, but the company
+            was hesitant to buy more because
+            they compared the number of licenses to the number of active users, and believed we should have plenty
+            of licenses We had not been reclaiming
+            the licenses from employees no longer working at the firm due to the tedious process of needing to open
+            a ticket and request manager approval for
+            every single license that needed to be reclaimed.
+
+            To combat this, I along with a member of my team wrote a script in powershell that automated this
+            process from start to finish.
+            First, it generates a list of users with office licenses that have not signed in for more than 60 days,
+            along with their managers.
+            Next, it interfaces with solarwinds samanage to create a ticket for each user and automatically requests
+            the managers approval (Making sure that it could handle users that don't have managers or aren't setup
+            properly)
+            Finally, it continuously checks the created tickets for manager approval, and when they get approved for
+            removal, it interfaces with Azure Active Directory to remove the license.
+
+            The process is run using a UNKNOWN SCHEDULER and is totally automatic and still in use.
+            <div></div>
+            Linux File System
+            In Linux, I created a file system in the user space using fuse that was a basic recreation of the linux
+            file system using inodes to map file names to directories.
+
+            <div></div>
+            Food Planning tool
+            Using google sheets I created a tool that would help me schduele and plan the meals I'm cooking. It is a
+            sheet split into 2 main pages.
+            First, the schedule for the week. This is where I write down what I want to cook each day of the week.
+            It then uses references the options page
+            to fill in the ingredients I'll need along with how long it took me to cook it the last time I made it.
+            The sheet also includes more pages to enhance the functionality.
+            Pantry can be used to keep track of what is currently in the frige and pantry and flag anything that
+            will need to be bought for the upcoming week.
+            Menu is a graphical page with a formatted version of each meal to help me choose what I want to cook.
+            Settings is a page that gives some customization for various settings.
+            <div></div>
+            Linux Shell
+            in linux in C I built a simple shell that allows for the execution of commands. It provided support for
+            command execution,
+            i/o redirection, and pipes, as well as sequential, conditional, and background command execution.
+            <div></div>
+            Tech Share
+            For a hackathon I competed on a team of 4 to create a website that helped connect people together so
+            they could share old technology
+            such as the Wii. I programmed on the backend setting up a database using firebase.
+            <div></div>
+            Cursed
+            Along with 3 other people I competed in a week long Game Jam for Northeastern. Our game was cursed, and
+            the basic premise was that we needed to cooperate with the main character
+            to help them navigate through a variety of games. As the game progessed, it got more and more difficult
+            to play. There would be "curses" on the player
+            and things would start happening, the mouse would jump around, programs wouldn't cooperate, and the game
+            became more difficult to play.
+            <div></div>
+            Battlecode
+            I competed along with 3 other people in MIT's battle code 2022. During this competition we programmed
+            rules based AI to play a real time strategy game.
+
         </div>
- 
-        </body>
+
+    </body>
