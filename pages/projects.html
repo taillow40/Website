@@ -10,10 +10,36 @@
     <div id="header"></div>
 
     <body class="body" style="margin:0">
+        <div id="ImageDisplay" style="display:none;">
+            <div class="ImageDisplay_Image" onclick="hideBigImage()"></div>
+            <div class="ImageDisplay_ImageSelector"></div>
+            <button class="ImageDisplay_SelectorButton left">&lt</button>
+            <button class="ImageDisplay_SelectorButton right">&gt</button>
 
-        <div class="content">
+        </div>
+
+        <h1 class="titleBox">
             <div class="title">Projects</div>
+            <div class="titleText">
+                "How can I make this better?" </div>
 
+        </h1>
+        <nav id="personalProfessional">
+            <button id="Personal" onclick="switchDisplay()" style="text-decoration-line: underline">Personal</button>
+            <button id="Professional" onclick="switchDisplay()">Professional</button>
+
+        </nav>
+        <div class="content">
+
+            <div class="personalTitleBox">
+                <div class="title">Personal</div>
+                <div class="personalTitleText">
+
+                    In my personal life I am always looking for ideas that I can use in my day to day life. Most of my
+                    personal projects
+                    involve this in some way, making small daily tasks easier and more enjoyable.
+                </div>
+            </div>
             <div class="projectBox" id="Personal Dashboard">
                 <div class="projectBox_Header">Personal Dashboard</div>
                 <div class="projectBox_ImageContainer">
@@ -34,7 +60,7 @@
                         </li>
                     </ul>
                     <script>
-                        SetupButtons(["/assets/HVPE.png", "/assets/PersonalDashboard.png"], "Personal Dashboard")
+                        SetupButtons(["/assets/PersonalDashboard.png", "/assets/PersonalDashboard_addition.png","/assets/PersonalDashboard_Firebase.png"], "Personal Dashboard")
                     </script>
 
                 </div>
@@ -54,12 +80,15 @@
                     <ul>
                         <li>A basic Led Controller that uses a Raspberry Pi to respond to HTTP requests</li>
                         <li>Uses NodeJS to host a basic server off the Raspberry Pi</li>
-                        <li>Simple electronic circuit responds to outputs from the Raspberry Pi and converts them with MOSFETs</li>
-                        
-                        
+                        <li>Simple electronic circuit responds to outputs from the Raspberry Pi and converts them with
+                            MOSFETs</li>
+
+
                     </ul>
                     <script>
-                        SetupButtons(["/assets/RGBInterface.png","/assets/RGBInterface2.png", "/assets/RGBBreadboard.JPG"], "Led Interface")
+                        SetupButtons(["/assets/RGBInterface.png", "/assets/RGBInterface2.png",
+                            "/assets/RGBBreadboard.JPG"
+                        ], "Led Interface")
                     </script>
 
                 </div>
@@ -78,97 +107,210 @@
                 <div class="projectBox_Content">
                     <ul>
                         <li>A google sheets page that I use as a recipe book </li>
-                        <li>Uses google scripts to automatically combine and list the ingredients I'll need for the days meals</li>
-                        
+                        <li>Uses google scripts to automatically combine and list the ingredients I'll need for the days
+                            meals</li>
+
                     </ul>
                     <script>
-                        SetupButtons(["/assets/RecipeBook_Options.png", "/assets/RecipeBook.png", "/assets/RecipeBook_Basic.png"], "Recipe Book")
+                        SetupButtons(["/assets/RecipeBook_Options.png", "/assets/RecipeBook.png",
+                            "/assets/RecipeBook_Basic.png"
+                        ], "Recipe Book")
+                    </script>
+
+                </div>
+            </div>
+            <div class="projectBox" id="World of Blocks">
+                <div class="projectBox_Header">World Of Blocks</div>
+                <div class="projectBox_ImageContainer">
+                    <div class="projectBox_Image"></div>
+                    <div class=projectBox_ImageSelectorThings>
+                        <div class="projectBox_ImageSelector"></div>
+                        <button class="projectBox_SelectorButton left">&lt</button>
+                        <button class="projectBox_SelectorButton right">&gt</button>
+                    </div>
+                </div>
+
+                <div class="projectBox_Content">
+                    <ul>
+                        <li>A game designed in Unity for IOS</li>
+                        <li>Written in almost entirely C# it's designed in a similar fashion to Angry Birds</li>
+                        <li>Players progress through the levels and over time new mechanics get introduced</li>
+
+                    </ul>
+                    <script>
+                        SetupButtons(["/assets/wob_homepage.png", "/assets/wob_level0.png", "/assets/wob_level41.png"],
+                            "World of Blocks")
+                    </script>
+
+                </div>
+            </div>
+            <div class="projectBox" id="Overwatch Webscraper">
+                <div class="projectBox_Header">Overwatch Webscraper</div>
+                <div class="projectBox_ImageContainer">
+                    <div class="projectBox_Image"></div>
+                    <div class=projectBox_ImageSelectorThings>
+                        <div class="projectBox_ImageSelector"></div>
+                        <button class="projectBox_SelectorButton left">&lt</button>
+                        <button class="projectBox_SelectorButton right">&gt</button>
+                    </div>
+                </div>
+
+                <div class="projectBox_Content">
+                    <ul>
+                        <li>A simple webscraper that takes the link to a Team in our tournament website, and builds a
+                            summary sheet</li>
+                        <li>Written entirely in Google Scripts, the program first scrapes the tournament website for the
+                            opponents players, and then queries a database for information about the players</li>
+
+
+                    </ul>
+                    <script>
+                        SetupButtons(["/assets/OWWS_Gamebattles.png", "/assets/OWWS_Chart.png",
+                            "/assets/OWWS_Sorted.png"
+                        ], "Overwatch Webscraper")
+                    </script>
+
+                </div>
+            </div>
+            <div class="projectBox" id="Linux">
+                <div class="projectBox_Header">Linux Shell, Database, and Filesystem</div>
+                <div class="projectBox_ImageContainer">
+                    <div class="projectBox_Image"></div>
+                    <div class=projectBox_ImageSelectorThings>
+                        <div class="projectBox_ImageSelector"></div>
+                        <button class="projectBox_SelectorButton left">&lt</button>
+                        <button class="projectBox_SelectorButton right">&gt</button>
+                    </div>
+                </div>
+
+                <div class="projectBox_Content">
+                    <ul>
+                        <li>Through a class on computer systems, built a linux shell, a multithreaded database, and a
+                            file system</li>
+                        <li>The shell supported I/O redirection and pipes, as well as sequential, conditional, and
+                            background command execution</li>
+                        <li>The key point of the database is that we wrote our own data protection, ensuring continuity
+                            using locks</li>
+                        <li>The file system was a basic recreation of the linux file system, mapping data blobs to file
+                            names and paths</li>
+
+                    </ul>
+                    <script>
+                        SetupButtons(["/assets/Linux.png"], "Linux")
+                    </script>
+
+                </div>
+            </div>
+        </div>
+        <div class="professionalContent" style="display: none;">
+
+            <div class="personalTitleBox">
+                <div class="title">Professional</div>
+                <div class="personalTitleText">
+
+                    In my time at Harbourvest, just like in my personal life I was always looking for ways to improve
+                    processes, often through automation.
+                </div>
+            </div>
+            <div class="projectBox" id="Automated Office365 Deprovisoining">
+                <div class="projectBox_Header">Automated Office365 Deprovisoining</div>
+                <div class="projectBox_ImageContainer">
+                    <div class="projectBox_Image"></div>
+                    <div class=projectBox_ImageSelectorThings>
+                        <div class="projectBox_ImageSelector"></div>
+                        <button class="projectBox_SelectorButton left">&lt</button>
+                        <button class="projectBox_SelectorButton right">&gt</button>
+                    </div>
+                </div>
+                <div class="projectBox_Content">
+                    <ul>
+                        <li>The furthest reaching project I completed, along side a teammate I wrote a set of scripts to
+                            automate deprovisoining of O365 licenses</li>
+                        <li>The script marks all inactive users that should not have licenses, then requests approval
+                            from their managers to remove the license and finally removes the license if applicable</li>
+                        <li>When I finished the internship, the script had already reclaimed 85 licenses, saving the
+                            company $46,000 a year</li>
+                        <li>Additionally completed the Six Sigma Certification through this project</li>
+                    </ul>
+                    <script>
+                        SetupButtons(["/assets/O365.png"], "Automated Office365 Deprovisoining")
+                    </script>
+
+                </div>
+            </div>
+            <div class="projectBox" id="GSD Portal">
+                <div class="projectBox_Header">GSD Portal</div>
+                <div class="projectBox_ImageContainer">
+                    <div class="projectBox_Image"></div>
+                    <div class=projectBox_ImageSelectorThings>
+                        <div class="projectBox_ImageSelector"></div>
+                        <button class="projectBox_SelectorButton left">&lt</button>
+                        <button class="projectBox_SelectorButton right">&gt</button>
+                    </div>
+                </div>
+                <div class="projectBox_Content">
+                    <ul>
+                        <li>In our office room, there was a large screen on the wall that was kept off</li>
+                        <li>Seeing that screen, I built a dashboard that displays information about our work that we
+                            could display on it</li>
+                        <li>The GSDportal displays our current ticket queue, as well as what regions are currently
+                            online</li>
+
+                    </ul>
+                    <script>
+                        SetupButtons(["/assets/GSDPortal.PNG", "/assets/GSDPortal_ToT.PNG",
+                            "/assets/GSPortal_Regions.PNG", "/assets/GSPortal_TicketPriority.PNG"
+                        ], "GSD Portal")
+                    </script>
+
+                </div>
+            </div>
+            <div class="projectBox" id="Insight Auto Approval">
+                <div class="projectBox_Header">Insight Auto Approval</div>
+                <div class="projectBox_ImageContainer">
+                    <div class="projectBox_Image"></div>
+                    <div class=projectBox_ImageSelectorThings>
+                        <div class="projectBox_ImageSelector"></div>
+                        <button class="projectBox_SelectorButton left">&lt</button>
+                        <button class="projectBox_SelectorButton right">&gt</button>
+                    </div>
+                </div>
+                <div class="projectBox_Content">
+                    <ul>
+                        <li>Insight is the external system Harbourvest uses to send Work From Home kits</li>
+                        <li>I created a script that streamlines the process, turning a 2 step process down to a 1 step
+                            process for my manager.</li>
+                    </ul>
+                    <script>
+                        SetupButtons(["/assets/Insight.jfif"], "Insight Auto Approval")
                     </script>
 
                 </div>
             </div>
 
+            <div class="projectBox" id="PowerBI Component">
+                <div class="projectBox_Header">PowerBI Dashboard Component</div>
+                <div class="projectBox_ImageContainer">
+                    <div class="projectBox_Image"></div>
+                    <div class=projectBox_ImageSelectorThings>
+                        <div class="projectBox_ImageSelector"></div>
+                        <button class="projectBox_SelectorButton left">&lt</button>
+                        <button class="projectBox_SelectorButton right">&gt</button>
+                    </div>
+                </div>
+                <div class="projectBox_Content">
+                    <ul>
+                        <li>On a powerBI dashboard, I created a component to display the number of incidents per region
+                            per person</li>
+                        <li>This component was created by combining the data from our ticket logs with our Workday logs
+                        </li>
 
+                    </ul>
+                    <script>
+                        SetupButtons(["/assets/PowerBI.png", "/assets/PowerBIFull.png"], "PowerBI Component")
+                    </script>
 
-
-            <div class="name" href=""></div>
-            Overwatch rank webscraper
-            Most overwatch tournaments are hosted on a website called gamebattles,
-            and through this website we are able to find the usernames of the players on the enemy teams. What my
-            webscraper does
-            is take a team link from this website, and then it scrapes the usernames from this link, and then
-            references a data base called Overbuff
-            that keeps track of the ranks of all overwatch players. Thus my webscraper is able to create a short
-            summary of teams we'll be facing in tournaments.
-            <div></div>
-            World of Blocks
-            World of blocks is a game designed in unity for ios. The basic premise of the game is that players are
-            trying to knock all blocks off of a platform.
-            It is similar to angry brids in that progression through the game is in the form of
-            individual levels, and as you progress further more mechanics are added to the game that make the levels
-            more complex, though not neccessarily more difficult.
-            I've also created a browser version of the game that can be played here:
-            <div></div>
-            Disabled Users Microsoft 365 licenses
-            While working at harbourvest there was a constant shortage of office 365 e5 licenses, but the company
-            was hesitant to buy more because
-            they compared the number of licenses to the number of active users, and believed we should have plenty
-            of licenses We had not been reclaiming
-            the licenses from employees no longer working at the firm due to the tedious process of needing to open
-            a ticket and request manager approval for
-            every single license that needed to be reclaimed.
-
-            To combat this, I along with a member of my team wrote a script in powershell that automated this
-            process from start to finish.
-            First, it generates a list of users with office licenses that have not signed in for more than 60 days,
-            along with their managers.
-            Next, it interfaces with solarwinds samanage to create a ticket for each user and automatically requests
-            the managers approval (Making sure that it could handle users that don't have managers or aren't setup
-            properly)
-            Finally, it continuously checks the created tickets for manager approval, and when they get approved for
-            removal, it interfaces with Azure Active Directory to remove the license.
-
-            The process is run using a UNKNOWN SCHEDULER and is totally automatic and still in use.
-            <div></div>
-            Linux File System
-            In Linux, I created a file system in the user space using fuse that was a basic recreation of the linux
-            file system using inodes to map file names to directories.
-
-            <div></div>
-            Food Planning tool
-            Using google sheets I created a tool that would help me schduele and plan the meals I'm cooking. It is a
-            sheet split into 2 main pages.
-            First, the schedule for the week. This is where I write down what I want to cook each day of the week.
-            It then uses references the options page
-            to fill in the ingredients I'll need along with how long it took me to cook it the last time I made it.
-            The sheet also includes more pages to enhance the functionality.
-            Pantry can be used to keep track of what is currently in the frige and pantry and flag anything that
-            will need to be bought for the upcoming week.
-            Menu is a graphical page with a formatted version of each meal to help me choose what I want to cook.
-            Settings is a page that gives some customization for various settings.
-            <div></div>
-            Linux Shell
-            in linux in C I built a simple shell that allows for the execution of commands. It provided support for
-            command execution,
-            i/o redirection, and pipes, as well as sequential, conditional, and background command execution.
-            <div></div>
-            Tech Share
-            For a hackathon I competed on a team of 4 to create a website that helped connect people together so
-            they could share old technology
-            such as the Wii. I programmed on the backend setting up a database using firebase.
-            <div></div>
-            Cursed
-            Along with 3 other people I competed in a week long Game Jam for Northeastern. Our game was cursed, and
-            the basic premise was that we needed to cooperate with the main character
-            to help them navigate through a variety of games. As the game progessed, it got more and more difficult
-            to play. There would be "curses" on the player
-            and things would start happening, the mouse would jump around, programs wouldn't cooperate, and the game
-            became more difficult to play.
-            <div></div>
-            Battlecode
-            I competed along with 3 other people in MIT's battle code 2022. During this competition we programmed
-            rules based AI to play a real time strategy game.
-
+                </div>
+            </div>
         </div>
-
     </body>
