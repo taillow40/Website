@@ -103,6 +103,7 @@
 .projectBox_Content {
     width: 40%;
     padding-top: 1%;
+    font-size: min(0.8vw, 1.7vh);
 }
 
 .personalTitleBox {
