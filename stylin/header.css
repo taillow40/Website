@@ -33,3 +33,54 @@
 
     text-decoration: underline;
 }
+
+.Linkedin {
+    position: absolute;
+    left: 96%;
+    top: 1.7%;
+    transform: (-50%, -50%);
+    background-image: url("/assets/LinkedIn.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 2%;
+    aspect-ratio: 1;
+    cursor: pointer;
+
+
+}
+
+.emailIcon {
+    position: absolute;
+    left: 93%;
+    top: 1.7%;
+    transform: (-50%, -50%);
+    background-image: url("/assets/emailIcon.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 2%;
+    aspect-ratio: 1;
+    cursor: pointer;
+
+
+}
+
+.emailIcon .toolTip {
+
+    width: auto;
+    height: auto;
+    padding: 3px;
+    border-radius: 5px;
+    font-size: min(0.9vw, 1.5vh);
+    top: 50%;
+    background-color: rgb(191, 230, 255);
+    z-index: 1;
+    position: relative;
+    left: 100%;
+    float: right;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.emailIcon:hover .toolTip {
+    display: block;
+}

@@ -9,6 +9,7 @@
     height: 30%;
     width: 100%;
 
+
 }
 
 .PageBlocks {
@@ -22,8 +23,14 @@
 .ProjectBlock {
     width: 17%;
     height: 70%;
-    outline: 1px white solid;
+    outline: 1px black solid;
+    background-color: rgb(174, 179, 250);
     position: absolute;
     transform: translate(-50%, -50%);
     cursor: pointer;
+    color: black;
+}
+
+.tallBlock-bottom {
+    text-align: center;
 }
