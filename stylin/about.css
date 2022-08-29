@@ -1,3 +1,149 @@
 .barAbout {
     text-decoration-line: underline !important;
 }
+
+.SelectorBoxes {
+
+    position: relative;
+    width: 80vw;
+    transform: translate(-50%, 0);
+    height: 39%;
+    left: 50%;
+    text-align: center;
+
+
+
+}
+
+.title {
+    padding-bottom: 2%;
+}
+
+.SelectorBox {
+    position: relative;
+    display: inline-block;
+    background-color: rgb(119, 189, 214);
+    width: 20%;
+    height: 100%;
+    margin-inline: 2%;
+    border: 1px solid black;
+    vertical-align: top;
+
+
+}
+
+.SelectorButton {
+    position: absolute;
+    background-color: lightgray;
+    border-radius: 15%;
+    padding: 6px;
+    top: 80%;
+    right: 8%;
+    cursor: pointer;
+
+
+}
+
+.SelectorBoxTextTitle {
+    font-size: min(1.7vw, 3.5vh);
+    padding: 5%;
+}
+
+.SelectorBoxText {
+    font-size: min(1vw, 2.1vh)
+}
+
+.blockOfContent {
+    position: relative;
+    width: 80%;
+    height: 60%;
+    margin-top: 1%;
+    border: 1px solid black;
+    left: 10%;
+
+}
+
+.ImageClass {
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    background-position: center;
+
+}
+
+#TOVG .ImageClass {
+    width: 30%;
+    height: 58%;
+    top: 32%;
+
+
+}
+
+#SurfingSwimming .ImageClass {
+    width: 18%;
+    height: 45%;
+    top: 32%;
+
+
+}
+
+#UnderwaterPhotography .ImageClass {
+    width: 20%;
+    height: 45%;
+    top: 32%;
+}
+
+#Reading .ImageClass {
+    width: 14%;
+    height: 90%;
+    top: 50%;
+
+}
+
+#UnderwaterPhotography .ContentText {
+    width: 20%;
+}
+
+.ContentText {
+    position: absolute;
+    font-size: min(1, 2.2vh);
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+#SurfingSwimming .ContentText {
+    width: 18%;
+}
+
+#TOVG {
+    background-color: rgb(190, 218, 228);
+}
+
+#TOVG .ContentText {
+    width: 30%;
+}
+
+#SurfingSwimming {
+    background-color: rgb(190, 218, 228);
+}
+
+#UnderwaterPhotography {
+    background-color: rgb(190, 218, 228);
+}
+
+#Reading {
+    background-color: rgb(190, 218, 228);
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border: solid 30vh;
+    border-color: transparent transparent rgb(190, 218, 228) transparent;
+    position: absolute;
+    top: -27%;
+    left: 37%;
+    transform: translate(-50%, -50%);
+
+}

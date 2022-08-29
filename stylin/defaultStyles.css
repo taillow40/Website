@@ -76,3 +76,8 @@
     width: 90%;
     height: 90%;
 }
+
+.bottomSpacer {
+    position: relative;
+    height: 15%;
+}
