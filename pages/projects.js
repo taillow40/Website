@@ -87,6 +87,11 @@ function displayBigImage(imageStringArray, boxID){
     function findI2(){
         
         myChildren = document.getElementById(boxID).querySelector('.projectBox_ImageSelector').children;
+        console.log(myChildren.length);
+        if(myChildren.length == 1){
+            return 0;
+        }
+        
         for(z = 1; z < myChildren.length - 1; z += 1){
             if(myChildren[z-1].style.backgroundColor != myChildren[z].style.backgroundColor && myChildren[z-1].style.backgroundColor != myChildren[z+1].style.backgroundColor){                
                 return z -1
@@ -137,6 +142,7 @@ function hideBigImage(){
     document.querySelector('.body').style.overflow = 'visible';
     imageDisplay.innerHTML=` <div class="ImageDisplay_Image" onclick="hideBigImage()"></div>
     <div class="ImageDisplay_ImageSelector"></div>
+    <div class="ImageDisplay_X" onclick="hideBigImage()">X</div>
     <button class="ImageDisplay_SelectorButton left">&lt</button>
     <button class="ImageDisplay_SelectorButton right">&gt</button>`;
 }

@@ -12,6 +12,7 @@
     <body class="body" style="margin:0">
         <div id="ImageDisplay" style="display:none;">
             <div class="ImageDisplay_Image" onclick="hideBigImage()"></div>
+            <div class="ImageDisplay_X" onclick="hideBigImage()">X</div>
             <div class="ImageDisplay_ImageSelector"></div>
             <button class="ImageDisplay_SelectorButton left">&lt</button>
             <button class="ImageDisplay_SelectorButton right">&gt</button>
@@ -306,7 +307,7 @@
 
                     </ul>
                     <script>
-                        SetupButtons(["/assets/PowerBI.PNG", "/assets/PowerBIFull.PNG"], "PowerBI Component")
+                        SetupButtons(["/assets/PowerBI.PNG"], "PowerBI Component")
                     </script>
 
                 </div>

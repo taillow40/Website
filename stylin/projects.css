@@ -196,6 +196,7 @@
     left: 50%;
     top: 45%;
     position: absolute;
+    cursor: pointer;
     border: 1px solid black;
 }
 
@@ -211,4 +212,15 @@
 
 
 
+}
+
+.ImageDisplay_X {
+    position: absolute;
+    left: 96%;
+    top: 2%;
+    font-weight: bold;
+    color: white;
+    font-size: min(5vw, 10vh);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: pointer;
 }

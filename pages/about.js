@@ -1,4 +1,4 @@
-olddisplay = "TOVG"
+olddisplay = "SurfingSwimming"
 function switchDisplay(id){
     document.getElementById(olddisplay).style.display = 'none'
     document.getElementById(olddisplay+'Selector').style.backgroundColor = 'rgb(119, 189, 214)';
