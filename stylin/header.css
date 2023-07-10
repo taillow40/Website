@@ -1,14 +1,12 @@
 .topnav {
     background-color: rgb(255, 255, 255);
-
     overflow: hidden;
     position: static;
     text-align: center;
     padding-top: 1rem;
-    min-width: 100vw;
+    width: 100%;
     z-index: 1;
-    padding-bottom: 1rem;
-
+    padding-bottom: var(--margin--large);
 
 }
 
@@ -84,3 +82,4 @@
 .emailIcon:hover .toolTip {
     display: block;
 }
+

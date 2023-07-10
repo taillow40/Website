@@ -1,6 +1,7 @@
 <head>
 
     <link rel="stylesheet" href="stylin/index.css">
+    <link rel="stylesheet" href="stylin/samstyle.css">
     <link rel="stylesheet" href="stylin/defaultStyles.css">
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="loadHeader.js"></script>
@@ -11,128 +12,52 @@
 <body>
     <div id="header"></div>
 
-    <body class="body" style="margin:0">
-        <div id='headerImage'>
-            <div class="imageBlock"
-                style='background-image: url("/assets/UnderwaterBackground.JPG"); background-size: cover; background-position-y: 5%;'>
-            </div>
-        </div>
+    <body class="body">
+        <div class='header-image'></div>
 
         <div class="content">
-
-            <a href="assets/Resume.pdf" target="_blank" id="resumeLink"></a>
-
-            <div class="PageBlocks" style="top:0vh; height: 90vh; ">
-
-
-                <div class="tallBlock" style="top:50%; left:35%" onclick="window.location.href='/pages/about.html'">
-                    <div class="pageBlock-top" style='height:90%'>
-                        <div class="imageBlock" style='background-image: url("/assets/8.5x11ShortHair2022ReallySmall.png");'></div>
-                    </div>
-                    <div class="pageBlock-bottom tallBlock-bottom" style='height:10%; top:92%;'>Learn more about me! </div>
+            
+            <div class="section--default about-me-resume">
+                <a href="assets/Resume.pdf" target="_blank" id="resumeLink"></a>
+                <div class="about-me-resume__picture" onclick="window.location.href='/pages/about.html'">
+                    <div class="about-me-resume__picture-image"></div>
+                    <div class="about-me-resume__picture-text about-me-resume__text">Learn more about me! </div>
                 </div>
-
-
-                <div class="tallBlock" style="top:50%; left:65%;"
-                    onclick="document.getElementById('resumeLink').click()">
-                    <div class="pageBlock-top" style='height:90%'>
-                        <div class="imageBlock" style='background-image: url("/assets/Resume.png");'></div>
-                    </div>
-                    <div class="pageBlock-bottom tallBlock-bottom" style='height:10%; top:92%;'>Resume</div>
+                
+                <div class="about-me-resume__resume" onclick="document.getElementById('resumeLink').click()">
+                    <div class="about-me-resume__picture-image" style='background-image: url("/assets/Resume.png");'></div>
+                    <div class="about-me-resume__picture-text about-me-resume__text">Resume</div>
                 </div>
             </div>
 
-            <div class="wideBlock" style="left:6%;">
+            <div class="section--third project-teaser">
                 
-                <div class="imageBlock"
-                    style='background-image: linear-gradient(180deg, rgb(0, 48, 102) 90%, rgb(0, 56, 82) 110%); background-size: cover;'>
-                </div>
-                <div style=" color:white; z-index:1; position:absolute; top:35%; left: 5%; font-weight:bold; font-size:300%">
-                    Projects
-                </div>
                 
-                <div style="color:rgb(137, 166, 255); position:absolute; top:45%; left: 5%; font-size:150%; padding:10px; cursor:pointer;" onclick="window.location='/pages/projects.html';">
-                    View All >
-                </div>
-                <div style="color: rgb(151, 151, 151);text-align:center;" >
-                    
-                    <div class="projectBlock" style="top:50%; left:45%;">
-                        <div class="pageBlock-top" style="height:70%;">
-                            <div class="imageBlock" style='background-image: url("/assets/RGBLedAPI.jfif");' onclick="window.location='/pages/projects.html#Led Interface';"></div>
-                        </div>
-                        <div class="pageBlock-bottom" style="top:80%">LED API</div>
-                    </div>
-                    <div class="projectBlock" style="top:50%; left:65%;">
-                        <div class="pageBlock-top" style="height:70%;">
-                            <div class="imageBlock" style='background-image: url("/assets/PersonalDashboard.png");'  onclick="window.location='/pages/projects.html#Personal Dashboard';"></div>
-                        </div>
-                        <div class="pageBlock-bottom" style="top:80%">Personal Dashboard</div>
-                    </div>
-                    <div class="projectBlock" style="top:50%; left:85%;">
-                        <div class="pageBlock-top" style="height:70%;">
-                            <div class="imageBlock" style='background-image: url("/assets/BlockGameIcon.png");'  onclick="window.location='/pages/projects.html#World of Blocks';"></div>
-                        </div>
-                        <div class="pageBlock-bottom" style="top:80%">World of Blocks </div>
+                
+                    <div class="project-teaser__header">
+                        Projects
                     </div>
                     
-                    
-                </div>
+                    <div class="project-teaser__link" onclick="window.location='/pages/projects.html';">
+                        View All >
+                    </div>
+                   
+                    <div class="project-teaser__blocks project-teaser__ledapi">
+                        <div class="imageBlock" style='background-image: url("/assets/RGBLedAPI.jfif");' onclick="window.location='/pages/projects.html#Led Interface';"></div>
+                    </div>
+                    <div class="project-teaser__text project-teaser__ledapi">LED API</div>
+                    <div class="project-teaser__blocks project-teaser__dashboard">
+                        <div class="imageBlock" style='background-image: url("/assets/PersonalDashboard.png");'  onclick="window.location='/pages/projects.html#Personal Dashboard';"></div>
+                       
+                    </div>
+                    <div class="project-teaser__text project-teaser__dashboard">Personal Dashboard</div>
+                    <div class="project-teaser__blocks project-teaser__wob">
+                        <div class="imageBlock" style='background-image: url("/assets/BlockGameIcon.png");'  onclick="window.location='/pages/projects.html#World of Blocks';"></div>
+                        
+                    </div>
+                    <div class="project-teaser__text project-teaser__wob"  style="top:80%">World of Blocks </div>
                 
-
-               
             </div>
-
-
-            <div class="PageBlocks" style="top:0vh; height: 40vh; display:none;">
-
-                <div class="pageBlock" style="top:50%; left:25%">
-                    <div class="pageBlock-top">
-                        <div class="imageBlock" style='background-image: url("/assets/HVPE.png");'></div>
-                    </div>
-                    <div class="pageBlock-bottom">Automation for the Help Desk at Harbourvest Private Equity. </div>
-                </div>
-                <div class="pageBlock" style="top:50%; left:50%">
-                    <div class="pageBlock-top">
-                        <div class="imageBlock" style='background-image: url("/assets/NortheasternSymbol.png");'></div>
-                    </div> 
-                    <div class="pageBlock-bottom">Northeastern University: BSCS Computer Science</div>
-                </div>
-                <div class="pageBlock" style="top:50%; left:75%">
-                    <div class="pageBlock-top">
-                        <div class="imageBlock" style='background-image: url("/assets/BlockGameIcon.png");'></div>
-                    </div>
-                    <div class="pageBlock-bottom">Whatever my second experience thing is </div>
-                </div>
-            </div>
-            <!-- <div class="Bio" style="font-size: 2REM">
-             <div style="max-width: 50REM;"> /div>  <img src="MyFaceProfilePicture.jpg" alt="Me!" style="height: 10REM; padding-left: 1REM;"> <br>
-            
-            
-
-            Most recently I worked Automation for the Help Desk Team at Harbourvest Private Equity. <br>
-
-            Here my projects included a powershell script to automate the approval and removal process of O365 licenses from contractors,
-            
-            as well as a webscraping tool to get and format data from samanage. See: #Projects-Webscraper. While I wasn't writing scrips, I was helping users with any tech issues they may have, ranging form
-
-            fixing BSOD issues to adjusting users timezones in outlook. Through this, I was able to meet a huge number of people within the company and I really enjoyed talking to everyone and asking about what they were working on. 
-            Since it is a private equity company, a lot of the financial terms began as very foreign to me but I gradually got an understanding of them. 
-            
-            
-            Outside of harbourvest I also work 2-3 hours a week as a professional tutor for Academics etc. I've worked here since august of 2020 and through this, I have 
-            I have gained a strong understanding not just of how to teach, but also how to teach someone how to do something with a deep understanding, and also how to give a brief overview.
-
-            In the past I also worked as a CPAs assitant doing '' and as a code sensei during a summer camp at Code Ninjas, teaching kids the fundamentals of programming.
-
-           
-
-
-            You can find a list of the projects 
-            In my personal time, I play for my schools Overwatch esport team, and while back in california enjoy surfing and underwater photography, 
-            You can see some of my best pictures here:
-
-            You can find my Resume here:  -->
-        </div>
         </div>
         <div class="bottomSpacer"></div>
     </body>

@@ -1,0 +1,52 @@
+/*
+    --color-primary: #102839;
+    --color-secondary: #3b6375; 
+    --color-tertiary: #87bdc8;
+    --color-quaternary: #a3e7ee;
+    --color-red: #95170f;
+    --color-quinary: #cbfaff;
+    --color-background: white;
+
+*/
+
+/*
+    --color-primary: #1c2139;
+    --color-secondary: #2a4f71; 
+    --color-tertiary: #405180;
+    --color-quaternary: #4984a5;
+    --color-red: #95170f;
+    --color-quinary: 7f7386;
+
+*/
+:root {
+    --color-primary: #1c2139;
+    --color-secondary: #2a4f71; 
+    --color-tertiary: #405180;
+    --color-quaternary: #4984a5;
+    --color-red: #95170f;
+    --color-quinary: #cbfaff;
+    --color-link: rgb(137, 166, 255);
+
+
+    --color-background: white;
+
+    --text-default: 12px;
+    --text-mid: calc(var(--text-default) * 1.6);
+    --text-large: calc(var(--text-default) * 1.6 * 1.6);
+    --text-giant: calc(var(--text-default) * 1.6 * 1.6 * 1.6);
+
+    --margin--page: 10%;
+    --margin--large: 50px;
+    --margin--medium: 25px; 
+    --margin--small: 10px;
+}
+
+@media only screen and (min-width: 400px) {
+    :root {
+        --text-default: 12px;
+        --text-mid: calc(var(--text-default) * 1.6);
+        --text-large: calc(var(--text-default) * 1.6 * 1.6);
+        --text-giant: calc(var(--text-default) * 1.6 * 1.6 * 1.6);
+    }
+}
+
