@@ -1,0 +1,78 @@
+body {
+    background-color: var(--color-blue-white);
+    padding-top: 0px;
+    margin: 0px;
+}
+.game-container {
+    grid-column: 1 / 2;
+    width: 100%;
+    height: 100%;
+    outline: 1px solid var(--color-primary);
+    display: inline-block;
+
+}
+.instructions {
+    font-size: var(--text-mid);
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    outline: 1px solid var(--color-primary);
+    background-color: white;
+    margin-top: var(--margin--small);
+    padding: 2px;
+}
+.leaderboard-entry-box {
+    position: relative;
+    text-align: center;
+    width: 100px;
+}
+.leaderboard-restart-game {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    outline: 1px solid black;
+    font-size: var(--text-mid);
+}
+.leaderboard-entry {
+   display: inline;
+}
+.leaderboard-entry-confirm {
+    display: inline;
+    font-size: var(--text-mid);
+    padding-left: 20px;
+}
+.leaderboard-entry-cancel {
+    display: inline;
+    font-size: var(--text-mid);
+    padding-left: 20px;
+}
+.game-leaderboard {
+    grid-column: 3 / 4;
+    outline: 1px solid var(--color-primary);
+    width: 100%;
+    height: 100%;
+}
+.game-block {
+    height: 80%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 72% 6% 22%;
+    grid-template-rows: 100%;
+    margin-top: var(--margin--small);
+}
+.leaderboard__row {
+    line-height: 10%;
+    height: 10%;
+    text-align: center;
+    width: 100%;
+    font-size: var(--text-large);
+}
+.leaderboard {
+    height: 100%;
+    table-layout: fixed;
+    width: 100%;
+    font-size: var(--text--mid);
+}

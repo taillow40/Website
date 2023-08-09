@@ -25,7 +25,9 @@
     --color-quaternary: #4984a5;
     --color-red: #95170f;
     --color-quinary: #cbfaff;
+    --color-gray: #8085a2;
     --color-link: rgb(137, 166, 255);
+    --color-blue-white: rgb(246, 248, 255);
 
 
     --color-background: white;
@@ -34,9 +36,12 @@
     --text-mid: calc(var(--text-default) * 1.6);
     --text-large: calc(var(--text-default) * 1.6 * 1.6);
     --text-giant: calc(var(--text-default) * 1.6 * 1.6 * 1.6);
+    --text-massive: calc(var(--text-default) * 1.6 * 1.6 * 1.6 * 1.6);
 
+    --margin--small: 10px;
     --margin--page: 10%;
     --margin--large: 50px;
+    --margin--massive: 200px;
     --margin--medium: 25px; 
     --margin--small: 10px;
 }

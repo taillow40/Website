@@ -1,9 +1,10 @@
-<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<head>
     <link rel="stylesheet" href="stylin/index.css">
     <link rel="stylesheet" href="stylin/samstyle.css">
     <link rel="stylesheet" href="stylin/defaultStyles.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="jquery-3.3.1.js"></script>
     <script src="loadHeader.js"></script>
 
 
@@ -11,53 +12,73 @@
 
 <body>
     <div id="header"></div>
-
-    <body class="body">
-        <div class='header-image'></div>
-
-        <div class="content">
-            
-            <div class="section--default about-me-resume">
-                <a href="assets/Resume.pdf" target="_blank" id="resumeLink"></a>
-                <div class="about-me-resume__picture" onclick="window.location.href='/pages/about.html'">
-                    <div class="about-me-resume__picture-image"></div>
-                    <div class="about-me-resume__picture-text about-me-resume__text">Learn more about me! </div>
-                </div>
-                
-                <div class="about-me-resume__resume" onclick="document.getElementById('resumeLink').click()">
-                    <div class="about-me-resume__picture-image" style='background-image: url("/assets/Resume.png");'></div>
-                    <div class="about-me-resume__picture-text about-me-resume__text">Resume</div>
-                </div>
-            </div>
-
-            <div class="section--third project-teaser">
-                
-                
-                
-                    <div class="project-teaser__header">
-                        Projects
-                    </div>
-                    
-                    <div class="project-teaser__link" onclick="window.location='/pages/projects.html';">
-                        View All >
-                    </div>
-                   
-                    <div class="project-teaser__blocks project-teaser__ledapi">
-                        <div class="imageBlock" style='background-image: url("/assets/RGBLedAPI.jfif");' onclick="window.location='/pages/projects.html#Led Interface';"></div>
-                    </div>
-                    <div class="project-teaser__text project-teaser__ledapi">LED API</div>
-                    <div class="project-teaser__blocks project-teaser__dashboard">
-                        <div class="imageBlock" style='background-image: url("/assets/PersonalDashboard.png");'  onclick="window.location='/pages/projects.html#Personal Dashboard';"></div>
-                       
-                    </div>
-                    <div class="project-teaser__text project-teaser__dashboard">Personal Dashboard</div>
-                    <div class="project-teaser__blocks project-teaser__wob">
-                        <div class="imageBlock" style='background-image: url("/assets/BlockGameIcon.png");'  onclick="window.location='/pages/projects.html#World of Blocks';"></div>
-                        
-                    </div>
-                    <div class="project-teaser__text project-teaser__wob"  style="top:80%">World of Blocks </div>
-                
-            </div>
+    <div class="main-box">
+        <div class="main-box__image"></div>
+        <div class="main-box__text">
+            How can I make <br>this better? 
         </div>
-        <div class="bottomSpacer"></div>
-    </body>
+        <a class="main-box__link" href="pages/projects.html">
+            View Projects >
+        </a>
+        <div class="main-box__projects">
+            <a class="main-box__projects__food-is-good"></a>
+            <a class="main-box__projects__block-game"></a>
+            <a class="main-box__projects__dashboard"></a>
+        </div>
+    </div>
+    <div class="quad-block">
+        <div class="quad-block__section quad-block__section--1">
+            <img class="quad-block__image--1"></img>
+            <div class="quad-block__title">
+                About Me
+            </div>
+            <div class="quad-block__text">
+                I am Samuel (Sam) Tomlinson, a software engineer with a passion for computers or something. 
+            </div>
+            <a class="quad-block__link">
+                Learn About Me >
+            </a>
+           
+        </div>
+        <div class="quad-block__section quad-block__section--2">
+            <img class="quad-block__image--2"></img>
+            <div class="quad-block__title">
+                Resume
+            </div>
+            <div class="quad-block__text quad-block__text--2">
+                See a condensed version of my experiences. 
+            </div>
+            <a class="quad-block__link">
+                View PDF >
+            </a>
+            
+        </div>
+        <div class="quad-block__section quad-block__section--3">
+            <img class="quad-block__image--3"></img>
+            <div class="quad-block__title">
+                Experience
+            </div>
+            <div class="quad-block__text quad-block__text--3">
+                Through my career I have worked at HarbourVest Partners as well as Smartleaf Inc.
+                Read more about my time at each of these places here.
+            </div>
+            <a class="quad-block__link">
+                View all Experience >
+            </a>
+            
+        </div>
+        <div class="quad-block__section quad-block__section--4">
+            <img class="image--default quad-block__image--4"></img>
+            <div class="quad-block__title">
+                Games
+            </div>
+            <div class="quad-block__text">
+                As someone who enjoys coding, games are a fun way to create something to play with friends. 
+            </div>
+            <a class="quad-block__link">
+                Browse Games >
+            </a>  
+        </div>
+    </div>
+    <div id="footer"></div>
+</body>

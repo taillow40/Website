@@ -1,17 +1,22 @@
-.topnav {
+.header {
     background-color: rgb(255, 255, 255);
     overflow: hidden;
-    position: static;
+    position: relative;
     text-align: center;
-    padding-top: 1rem;
     width: 100%;
     z-index: 1;
-    padding-bottom: var(--margin--large);
-
+    display: grid; 
+    --pages-width: max(150px, 10%);
+    --icon-width: max(75px, 5%);
+    grid-template-columns: var(--pages-width) var(--pages-width) var(--pages-width) var(--pages-width) auto var(--icon-width) var(--icon-width);
+    grid-template-rows: auto;
+    height: 6%;
+    padding-top: var(--margin--small);
+    padding-bottom: var(--margin--small);
 }
 
 
-.topnav a {
+.header a {
 
     color: #686868;
     text-align: center;
@@ -21,65 +26,45 @@
     height: 1rem;
 }
 
-.headerBlock {
-    min-height: 0rem;
-
+.header__index {
+    grid-area: 1 / 1 / 2 / 2;
 }
 
+.header__projects {
+    grid-area: 1 / 2 / 2 / 3;
+}
 
-.topnav a:hover {
+.header__about {
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+.header__games {
+    grid-area: 1 / 4 / 2 / 5;
+}
+
+.header a:hover {
 
     text-decoration: underline;
 }
 
-.Linkedin {
-    position: absolute;
-    left: 96%;
-    top: 1.7%;
-    transform: (-50%, -50%);
+.header__linked-in {
+    grid-area: 1 / 7 / 2 / 8;
     background-image: url("/assets/LinkedIn.png");
     background-repeat: no-repeat;
     background-size: contain;
-    width: 2%;
-    aspect-ratio: 1;
+    background-position: center;
     cursor: pointer;
 
 
 }
 
-.emailIcon {
-    position: absolute;
-    left: 93%;
-    top: 1.7%;
-    transform: (-50%, -50%);
+.header__email {
+    grid-area: 1 / 6 / 2 / 7;
+    position: relative;
     background-image: url("/assets/emailIcon.png");
     background-repeat: no-repeat;
     background-size: contain;
-    width: 2%;
-    aspect-ratio: 1;
+    background-position: center;
     cursor: pointer;
-
-
-}
-
-.emailIcon .toolTip {
-
-    width: auto;
-    height: auto;
-    padding: 3px;
-    border-radius: 5px;
-    font-size: min(0.9vw, 1.5vh);
-    top: 50%;
-    background-color: rgb(191, 230, 255);
-    z-index: 1;
-    position: relative;
-    left: 100%;
-    float: right;
-    transform: translate(-50%, -50%);
-    display: none;
-}
-
-.emailIcon:hover .toolTip {
-    display: block;
 }
 
