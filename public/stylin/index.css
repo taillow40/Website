@@ -55,17 +55,17 @@ body {
 
 .main-box__projects__food-is-good {
     grid-column: 1 / 2;
-    background-image: url("/assets/food-is-goodCircle.png");
+    background-image: url("/images/food-is-goodCircle.png");
 }
 
 .main-box__projects__block-game {
     grid-column: 2 / 3;
-    background-image: url("/assets/BlockGameIconCircle.png");
+    background-image: url("/images/BlockGameIconCircle.png");
 }
 
 .main-box__projects__dashboard {
     grid-column: 3 / 4;
-    background-image: url("/assets/PersonalDashboard.png");
+    background-image: url("/images/PersonalDashboard.png");
     background-size: contain !important;
 }
 
@@ -163,17 +163,17 @@ body {
 }
 
 .quad-block__image--1 {
-    background-image: url("/assets/8.5x11ShortHair2022ReallySmall.png");
+    background-image: url("/images/8.5x11ShortHair2022ReallySmall.png");
 }
 
 .quad-block__image--2 {
-    background-image: url("/assets/Resume.png");
+    background-image: url("/images/Resume.png");
 }
 
 .quad-block__image--3 {
-    background-image: url("/assets/BlockGameIcon.png");
+    background-image: url("/images/BlockGameIcon.png");
 }
 
 .quad-block__image--4 {
-    background-image: url("/assets/Games.png");
+    background-image: url("/images/Games.png");
 }
