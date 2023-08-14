@@ -49,7 +49,7 @@
 
 .header__linked-in {
     grid-area: 1 / 7 / 2 / 8;
-    background-image: url("/assets/LinkedIn.png");
+    background-image: url("/images/LinkedIn.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -61,7 +61,7 @@
 .header__email {
     grid-area: 1 / 6 / 2 / 7;
     position: relative;
-    background-image: url("/assets/emailIcon.png");
+    background-image: url("/images/emailIcon.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
