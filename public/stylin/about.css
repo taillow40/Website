@@ -5,12 +5,13 @@
 .SelectorBoxes {
 
     position: relative;
-    width: 80vw;
+    width: 100%;
     transform: translate(-50%, 0);
-    height: 39%;
+    height: 40%;
     left: 50%;
     text-align: center;
-
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 
 
 }
@@ -22,44 +23,40 @@
 .SelectorBox {
     position: relative;
     display: inline-block;
-    background-color: rgb(119, 189, 214);
-    width: 20%;
+    background-color: var(--color-blue-white);
     height: 100%;
     margin-inline: 2%;
-    border: 1px solid black;
     vertical-align: top;
-
-
 }
 
 .SelectorButton {
     position: absolute;
-    background-color: lightgray;
     border-radius: 15%;
     padding: 6px;
+    color: var(--color-link);
     top: 80%;
     right: 8%;
     cursor: pointer;
+    font-size: var(--text-mid);
 
 
 }
 
 .SelectorBoxTextTitle {
-    font-size: min(1.7vw, 3.5vh);
+    font-size: var(--text-large);
     padding: 5%;
 }
 
 .SelectorBoxText {
-    font-size: min(1vw, 2.1vh)
+    font-size: var(--text-mid);
 }
 
 .blockOfContent {
     position: relative;
-    width: 80%;
+    width: 100%;
     height: 60%;
-    margin-top: 1%;
-    border: 1px solid black;
-    left: 10%;
+    margin-top: var(--margin--small);
+    font-size: var(--text-mid);
 
 }
 
@@ -117,7 +114,7 @@
 }
 
 #TOVG {
-    background-color: rgb(190, 218, 228);
+    background-color: var(--color-blue-blue-white);
 }
 
 #TOVG .ContentText {
@@ -125,15 +122,15 @@
 }
 
 #SurfingSwimming {
-    background-color: rgb(190, 218, 228);
+    background-color: var(--color-blue-blue-white);
 }
 
 #UnderwaterPhotography {
-    background-color: rgb(190, 218, 228);
+    background-color: var(--color-blue-blue-white);
 }
 
 #Reading {
-    background-color: rgb(190, 218, 228);
+    background-color: var(--color-blue-blue-white);
 }
 
 .triangle {

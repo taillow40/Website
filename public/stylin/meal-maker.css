@@ -1,3 +1,52 @@
 .meal-maker__button {
-    outline: 1px solid blue;
+    background-color: var(--color-blue-blue-white);
+    color: var(--color-primary);
+    height: 80%;
+    margin-top: var(--margin--small);
+}
+
+.meal-maker__title {
+    width: 80%;
+    background-color: var(--color-blue-white);
+    color: var(--color-primary);
+    font-size: var(--text-large);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: var(--margin--small);
+}
+
+.meal-maker__block {
+    background-color: var(--color-blue-white);
+    width: 100%;
+    height: 80%;
+}
+
+.meal-maker__inputs{
+    margin-top: var(--margin--large);
+    width: 33%;
+    height: 40%;
+    display: grid;
+    grid-template-rows: repeat(4,1fr); 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.meal-input {
+    grid-row: 1 / 2;
+    width: 100%;
+}
+
+.gray-line {
+    width: 80%;
+    height: 1px;
+    background-color: var(--color-gray);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: var(--margin--small);
+}
+
+.meal {
+    text-align: center;
+    font-size: var(--text-large);
 }

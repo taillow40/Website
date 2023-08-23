@@ -12,10 +12,11 @@ const openai = axios.create({
 });
 
 async function callChatGPT(promptText) {
+    console.log(promptText);
     try {
         const response = await openai.post('/completions', {
             prompt: promptText,
-            max_tokens: 150
+            max_tokens: 100
         });
         console.log(response.data.choices[0].text.trim());
         return response.data.choices[0].text.trim();
@@ -23,7 +24,13 @@ async function callChatGPT(promptText) {
         console.error('Error calling ChatGPT:', error.response.data);
     }
 }
-
+function chickenGpt(){
+    retval = `1. Chicken Fried Rice
+    2. Chicken Parmesan
+    3. Chicken Fajitas`;
+    console.log(retval)
+    return retval;
+}
 function hello(){
     console.log('hello');
 }

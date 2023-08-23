@@ -6,9 +6,9 @@
     width: 100%;
     z-index: 1;
     display: grid; 
-    --pages-width: max(150px, 10%);
+    --pages-width: max(190px, 11%);
     --icon-width: max(75px, 5%);
-    grid-template-columns: var(--pages-width) var(--pages-width) var(--pages-width) var(--pages-width) auto var(--icon-width) var(--icon-width);
+    grid-template-columns: var(--pages-width) var(--pages-width) var(--pages-width) var(--pages-width) var(--pages-width) auto var(--icon-width) var(--icon-width);
     grid-template-rows: auto;
     height: 6%;
     padding-top: var(--margin--small);
@@ -40,6 +40,9 @@
 
 .header__games {
     grid-area: 1 / 4 / 2 / 5;
+}
+.header__games {
+    grid-area: 1 / 5 / 2 / 6;
 }
 
 .header a:hover {

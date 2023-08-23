@@ -1,9 +1,10 @@
 <head>
     <link rel="stylesheet" href="/stylin/defaultStyles.css">
     <link rel="stylesheet" href="/stylin/projects.css">
-    <script src="../jquery-3.3.1.js"></script>
+    <script src="/jquery-3.3.1.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="/loadHeader.js"></script>
+    <link rel="stylesheet" href="/stylin/samstyle.css">
     <script src="/pages/projects.js"></script>
 </head>
 
@@ -21,29 +22,14 @@
         </div>
 
         <h1 class="titleBox">
-            <div class="title">Projects</div>
+            <div class="title-box__title">Personal Projects</div>
             <div class="titleText">
-                "How can I make this better?" </div>
-
+                I am always looking for ideas that I can use in my day to day life. Most of my personal projects
+                    involve this in some way, making small daily tasks easier and more enjoyable. </div>
         </h1>
-        <nav id="personalProfessional">
-            <button id="Personal" onclick="switchDisplay()" style="text-decoration-line: underline">Personal</button>
-            <button id="Professional" onclick="switchDisplay()">Professional</button>
-
-        </nav>
         <div class="content">
-
-            <div class="personalTitleBox">
-                <div class="title">Personal</div>
-                <div class="personalTitleText">
-
-                    In my personal life I am always looking for ideas that I can use in my day to day life. Most of my
-                    personal projects
-                    involve this in some way, making small daily tasks easier and more enjoyable.
-                </div>
-            </div>
             <div class="projectBox" id="Personal Dashboard">
-                <div class="projectBox_Header">Personal Dashboard</div>
+                <div class="project-box__header">Personal Dashboard</div>
                 <div class="projectBox_ImageContainer">
                     <div class="projectBox_Image"></div>
                     <div class=projectBox_ImageSelectorThings>
@@ -53,7 +39,7 @@
                     </div>
                 </div>
 
-                <div class="projectBox_Content">
+                <div class="project-box__content">
                     <ul>
                         <li>A website that displays my personal tasks and health numbers for the day, reminding me when
                             there are things that need to be done. </li>
@@ -67,8 +53,8 @@
 
                 </div>
             </div>
-            <div class="projectBox" id="Led Interface">
-                <div class="projectBox_Header">Led Interface</div>
+            <div class="projectBox" id="Food for Me">
+                <div class="project-box__header">Food for Me</div>
                 <div class="projectBox_ImageContainer">
                     <div class="projectBox_Image"></div>
                     <div class=projectBox_ImageSelectorThings>
@@ -78,7 +64,32 @@
                     </div>
                 </div>
 
-                <div class="projectBox_Content">
+                <div class="project-box__content">
+                    <ul>
+                        <li> A web app that handles day to day food management. 
+                        </li>
+                        <li>AngularJS to build a frontend to manage and record the contents of my pantry and fridge. </li>
+                        <li>A recipe book with an interface that assists in deciding on dinner using a tournament style process.
+                        </li>
+                    </ul>
+                    <script>
+                        SetupButtons(["/images/FK_terminal.png", "/images/FK_KMenu.png","/images/FK_KSelect.png"], "Food for Me")
+                    </script>
+
+                </div>
+            </div>
+            <div class="projectBox" id="Led Interface">
+                <div class="project-box__header">Led Interface</div>
+                <div class="projectBox_ImageContainer">
+                    <div class="projectBox_Image"></div>
+                    <div class=projectBox_ImageSelectorThings>
+                        <div class="projectBox_ImageSelector"></div>
+                        <button class="projectBox_SelectorButton left">&lt</button>
+                        <button class="projectBox_SelectorButton right">&gt</button>
+                    </div>
+                </div>
+
+                <div class="project-box__content">
                     <ul>
                         <li>A basic Led Controller that uses a Raspberry Pi to respond to HTTP requests</li>
                         <li>Uses NodeJS to host a basic server off the Raspberry Pi</li>
@@ -96,7 +107,7 @@
                 </div>
             </div>
             <div class="projectBox" id="Recipe Book">
-                <div class="projectBox_Header">Recipe Book</div>
+                <div class="project-box__header">Recipe Book</div>
                 <div class="projectBox_ImageContainer">
                     <div class="projectBox_Image"></div>
                     <div class=projectBox_ImageSelectorThings>
@@ -106,7 +117,7 @@
                     </div>
                 </div>
 
-                <div class="projectBox_Content">
+                <div class="project-box__content">
                     <ul>
                         <li>A google sheets page that I use as a recipe book </li>
                         <li>Uses google scripts to automatically combine and list the ingredients I'll need for the days
@@ -122,7 +133,7 @@
                 </div>
             </div>
             <div class="projectBox" id="World of Blocks">
-                <div class="projectBox_Header">World Of Blocks</div>
+                <div class="project-box__header">World Of Blocks</div>
                 <div class="projectBox_ImageContainer">
                     <div class="projectBox_Image"></div>
                     <div class=projectBox_ImageSelectorThings>
@@ -132,7 +143,7 @@
                     </div>
                 </div>
 
-                <div class="projectBox_Content">
+                <div class="project-box__content">
                     <ul>
                         <li>A game designed in Unity for IOS</li>
                         <li>Written in almost entirely C# it's designed in a similar fashion to Angry Birds</li>
@@ -147,7 +158,7 @@
                 </div>
             </div>
             <div class="projectBox" id="Overwatch Webscraper">
-                <div class="projectBox_Header">Overwatch Webscraper</div>
+                <div class="project-box__header">Overwatch Webscraper</div>
                 <div class="projectBox_ImageContainer">
                     <div class="projectBox_Image"></div>
                     <div class=projectBox_ImageSelectorThings>
@@ -157,7 +168,7 @@
                     </div>
                 </div>
 
-                <div class="projectBox_Content">
+                <div class="project-box__content">
                     <ul>
                         <li>A simple webscraper that takes the link to a Team in our tournament website, and builds a
                             summary sheet</li>
@@ -175,7 +186,7 @@
                 </div>
             </div>
             <div class="projectBox" id="Linux">
-                <div class="projectBox_Header">Linux Shell, Database, and Filesystem</div>
+                <div class="project-box__header">Linux Shell, Database, and Filesystem</div>
                 <div class="projectBox_ImageContainer">
                     <div class="projectBox_Image"></div>
                     <div class=projectBox_ImageSelectorThings>
@@ -185,7 +196,7 @@
                     </div>
                 </div>
 
-                <div class="projectBox_Content">
+                <div class="project-box__content">
                     <ul>
                         <li>Through a class on computer systems, built a linux shell, a multithreaded database, and a
                             file system</li>
@@ -204,115 +215,6 @@
                 </div>
             </div>
         </div>
-        <div class="professionalContent" style="display: none;">
-
-            <div class="personalTitleBox">
-                <div class="title">Professional</div>
-                <div class="personalTitleText">
-
-                    In my time at Harbourvest, just like in my personal life I was always looking for ways to improve
-                    processes, often through automation.
-                </div>
-            </div>
-            <div class="projectBox" id="Automated Office365 Deprovisoining">
-                <div class="projectBox_Header">Automated Office365 Deprovisoining</div>
-                <div class="projectBox_ImageContainer">
-                    <div class="projectBox_Image"></div>
-                    <div class=projectBox_ImageSelectorThings>
-                        <div class="projectBox_ImageSelector"></div>
-                        <button class="projectBox_SelectorButton left">&lt</button>
-                        <button class="projectBox_SelectorButton right">&gt</button>
-                    </div>
-                </div>
-                <div class="projectBox_Content">
-                    <ul>
-                        <li>The furthest reaching project I completed, along side a teammate I wrote a set of scripts to
-                            automate deprovisoining of O365 licenses</li>
-                        <li>The script marks all inactive users that should not have licenses, then requests approval
-                            from their managers to remove the license and finally removes the license if applicable</li>
-                        <li>Saving company $46,000/year as of August</li>
-                        <li>Six Sigma Certified</li>
-                    </ul>
-                    <script>
-                        SetupButtons(["/images/O365.png"], "Automated Office365 Deprovisoining")
-                    </script>
-
-                </div>
-            </div>
-            <div class="projectBox" id="GSD Portal">
-                <div class="projectBox_Header">GSD Portal</div>
-                <div class="projectBox_ImageContainer">
-                    <div class="projectBox_Image"></div>
-                    <div class=projectBox_ImageSelectorThings>
-                        <div class="projectBox_ImageSelector"></div>
-                        <button class="projectBox_SelectorButton left">&lt</button>
-                        <button class="projectBox_SelectorButton right">&gt</button>
-                    </div>
-                </div>
-                <div class="projectBox_Content">
-                    <ul>
-                        <li>In our office room, there was a large screen on the wall that was kept off</li>
-                        <li>Seeing that screen, I built a dashboard that displays information about our work that we
-                            could display on it</li>
-                        <li>The GSDportal displays our current ticket queue, as well as what regions are currently
-                            online</li>
-
-                    </ul>
-                    <script>
-                        SetupButtons(["/images/GSDPortal.PNG", "/images/GSDPortal_ToT.PNG",
-                            "/images/GSPortal_Regions.PNG", "/images/GSPortal_TicketPriority.PNG"
-                        ], "GSD Portal")
-                    </script>
-
-                </div>
-            </div>
-            <div class="projectBox" id="Insight Auto Approval">
-                <div class="projectBox_Header">Insight Auto Approval</div>
-                <div class="projectBox_ImageContainer">
-                    <div class="projectBox_Image"></div>
-                    <div class=projectBox_ImageSelectorThings>
-                        <div class="projectBox_ImageSelector"></div>
-                        <button class="projectBox_SelectorButton left">&lt</button>
-                        <button class="projectBox_SelectorButton right">&gt</button>
-                    </div>
-                </div>
-                <div class="projectBox_Content">
-                    <ul>
-                        <li>Insight is the external system Harbourvest uses to send Work From Home kits</li>
-                        <li>I created a script that streamlines the process, turning a 2 step process down to a 1 step
-                            process for my manager.</li>
-                    </ul>
-                    <script>
-                        SetupButtons(["/images/Insight.jfif"], "Insight Auto Approval")
-                    </script>
-
-                </div>
-            </div>
-
-            <div class="projectBox" id="PowerBI Component">
-                <div class="projectBox_Header">PowerBI Dashboard Component</div>
-                <div class="projectBox_ImageContainer">
-                    <div class="projectBox_Image"></div>
-                    <div class=projectBox_ImageSelectorThings>
-                        <div class="projectBox_ImageSelector"></div>
-                        <button class="projectBox_SelectorButton left">&lt</button>
-                        <button class="projectBox_SelectorButton right">&gt</button>
-                    </div>
-                </div>
-                <div class="projectBox_Content">
-                    <ul>
-                        <li>On a powerBI dashboard, I created a component to display the number of incidents per region
-                            per person</li>
-                        <li>This component was created by combining the data from our ticket logs with our Workday logs
-                        </li>
-
-                    </ul>
-                    <script>
-                        SetupButtons(["/images/PowerBI.PNG"], "PowerBI Component")
-                    </script>
-
-                </div>
-            </div>
-        </div>
         <div class="bottomSpacer"></div>
+        <div id="footer"></div>
     </body>

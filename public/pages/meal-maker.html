@@ -1,6 +1,7 @@
 <head>
     <link rel="stylesheet" href="../stylin/meal-maker.css">
     <link rel="stylesheet" href="../stylin/defaultStyles.css">
+    <link rel="stylesheet" href="../stylin/samstyle.css">
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="../loadHeader.js"></script>
     <script src="/pages/meal-maker.js"></script>
@@ -11,8 +12,44 @@
 <div id="header"></div>
 
 <body class="body">
- Hello I will make you a meal, please enter below what you would like:
- <input class="meal-input"></input>
- <button class="meal-maker__button" onclick="makeMeal()">Make Meal</button>
- <div class="meal"></div>
+    <div class="meal-maker__block">
+        <div class="meal-maker__title">I am Meal Maker, Enter your main ingredient, and select your time, and I will recommend you a meal you can make</div>
+        <div class="meal-maker__inputs">
+            <input class="meal-input" placeholder="Enter an Ingredient"></input>
+            <select class="cuisine-input" placeholder="Cuisine">
+                <option value=""></option>
+                <option value="african">African</option>
+                <option value="american">American</option>
+                <option value="british">British</option>
+                <option value="caribbean">Caribbean</option>
+                <option value="chinese">Chinese</option>
+                <option value="french">French</option>
+                <option value="german">German</option>
+                <option value="greek">Greek</option>
+                <option value="indian">Indian</option>
+                <option value="italian">Italian</option>
+                <option value="japanese">Japanese</option>
+                <option value="korean">Korean</option>
+                <option value="mexican">Mexican</option>
+                <option value="middle-eastern">Middle Eastern</option>
+                <option value="nordic">Nordic</option>
+                <option value="south-american">South American</option>
+                <option value="spanish">Spanish</option>
+                <option value="thai">Thai</option>
+                <option value="vietnamese">Vietnamese</option>
+            </select>
+            <select class="time-input" placeholder="Time Constraint">
+                <option value=""></option>
+                <option value="10 Minutes">10 Minutes</option>
+                <option value="30 Minutes">30 Minutes</option>
+                <option value="1 Hour">1 Hour</option>
+                <option value="3 Hours">3 Hours</option>
+            </select>
+            <button class="meal-maker__button" onclick="makeMeal()">Make Meal</button>
+        </div>
+        <div class="gray-line"></div>
+        <div class="meal"></div>
+    </div>
+ 
+ <div id="footer"></div>
 </body>
