@@ -80,11 +80,13 @@ body {
     height: 45%;
     margin-top: var(--margin--small);
 
+
 }
 
 .quad-block__section{
     position: relative;
     background: var(--color-blue-white);
+    cursor: pointer;
 }
 .quad-block__section--1 {
     grid-row: 1 / 2;
@@ -175,5 +177,5 @@ body {
 }
 
 .quad-block__image--4 {
-    background-image: url("/images/Games.png");
+    background-image: url("/images/Game.png");
 }

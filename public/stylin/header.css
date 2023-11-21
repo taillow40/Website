@@ -8,7 +8,7 @@
     display: grid; 
     --pages-width: max(190px, 11%);
     --icon-width: max(75px, 5%);
-    grid-template-columns: var(--pages-width) var(--pages-width) var(--pages-width) var(--pages-width) var(--pages-width) auto var(--icon-width) var(--icon-width);
+    grid-template-columns: var(--pages-width) var(--pages-width) var(--pages-width) var(--pages-width) var(--pages-width) auto var(--icon-width) var(--icon-width) var(--icon-width);
     grid-template-rows: auto;
     height: 6%;
     padding-top: var(--margin--small);
@@ -51,7 +51,7 @@
 }
 
 .header__linked-in {
-    grid-area: 1 / 7 / 2 / 8;
+    grid-area: 1 / 8 / 2 / 9;
     background-image: url("/images/LinkedIn.png");
     background-repeat: no-repeat;
     background-size: contain;
@@ -62,7 +62,7 @@
 }
 
 .header__email {
-    grid-area: 1 / 6 / 2 / 7;
+    grid-area: 1 / 7 / 2 / 8;
     position: relative;
     background-image: url("/images/emailIcon.png");
     background-repeat: no-repeat;
