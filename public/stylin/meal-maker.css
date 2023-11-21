@@ -30,11 +30,21 @@
     grid-template-rows: repeat(4,1fr); 
     margin-left: auto;
     margin-right: auto;
+    font-size: var(--text-mid);
 }
 
 .meal-input {
     grid-row: 1 / 2;
     width: 100%;
+    font-size: var(--text-mid);
+}
+
+.cuisine-input {
+    font-size: var(--text-mid);
+}
+
+.time-input {
+    font-size: var(--text-mid);
 }
 
 .gray-line {
