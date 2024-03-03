@@ -22,5 +22,9 @@ router.get('/clickyclick', (req, res) => {
 router.get('/meal_maker', (req, res) => {
     res.sendFile(path.join(__dirname, '../public', 'pages/meal-maker.html'));
 });
+
+router.get('/stocks', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public', 'StockGraphs/graphs.html'));
+});
  
 module.exports = router;
