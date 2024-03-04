@@ -25,6 +25,7 @@
     border: 1px solid black;
     margin-bottom: 0px;
     padding-bottom: 0px;
+    position: relative;
 }
 
 #graph_canvas {
@@ -46,6 +47,18 @@
     margin-right: auto;
     text-align: center;
     padding: var(--margin--small);
+}
+
+#display_optimals {
+    background-color: #8085a2;
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+    height: 30px;
+    padding: 5px;
+    outline: 1px solid black;
 }
 
 #buttons_container{

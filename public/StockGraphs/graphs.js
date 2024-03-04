@@ -2,7 +2,7 @@
 currentGraph = 'Total Timesteps';
 graph_options = ['Total Timesteps', 'Accuracy', 'Negative %', 'Reward', 'Profit', 'Weighted Proft', 'Next Weight', 'Performance']
 colors = ['#E6194B', '#3CB44B', '#FFE119', '#4363D8', '#F58231', '#911EB4', '#46F0F0', '#F032E6', '#BCF60C', '#FABEBE']
-
+show_optimals = false;
 selected_graphs = [];
 chart = null;
 cache = {};
@@ -121,21 +121,15 @@ function graphNext(x, y, names, labels){
 }
 
 //(dates, optimals, percents, labels);
-function graphPerformance(x, optimals, percents, names, labels){
+function graphPerformance(x, y, names, labels){
     
     
     x = x.slice(-10);
-    console.log(x);
     x = x.map(function(date, index){
         myDate = new Date(date);
         return (myDate.getMonth() + 1) + '/' + myDate.getDate();
     });
-    console.log(x);
-    y = [];
-    y.push(optimals);
-    for(let i = 0; i < percents.length; i++){
-        y.push(percents[i]);
-    }
+
     for (let i = 0; i < y.length; i++) {
         y[i] = y[i].slice(-10); 
         names[i] = names[i].slice(-10);
@@ -283,6 +277,7 @@ async function fetchCSV() {
 
 function buildButtons(){
     gridContainer = document.getElementById('buttons_container');
+    optimals_button = document.getElementById('display_optimals');
     for(let i = 0; i < graph_options.length; i++){
         const button = document.createElement('button');
         button.innerHTML = graph_options[i];
@@ -298,11 +293,17 @@ function buildButtons(){
             buttons.forEach(button => {
                 button.style.backgroundColor = '#8085a2';
             });
+            
 
         
             button.style.backgroundColor = '#cbfaff';
 
             currentGraph = graph_options[i];
+            if(currentGraph == 'Performance'){
+                optimals_button.style.display = 'block';
+            } else {
+                optimals_button.style.display = 'none';
+            }
             genericGraph();
             
             
@@ -313,6 +314,16 @@ function buildButtons(){
 
 
         gridContainer.appendChild(button);
+    }
+    
+    optimals_button.onclick = function(){
+        if(!show_optimals){ 
+            optimals_button.style.backgroundColor = '#cbfaff';
+        } else {
+            optimals_button.style.backgroundColor = '#8085a2';
+        }
+        show_optimals = !show_optimals;
+        genericGraph();
     }
 }
 
@@ -374,12 +385,20 @@ function processHistoryData(data){
     optimals = data['optimals'];
     //optimals = optimals.slice(0, optimals.length - 1);
     percents = [];
-    optimal_names = [];
-    for(i = 0; i < data['optimals'].length; i++){
-        optimal_names.push("");
+    names = [];
+    labels = [];
+    y = [];
+    if(show_optimals){
+        optimal_names = [];
+        for(i = 0; i < data['optimals'].length; i++){
+            optimal_names.push("");
+        }
+        names.push(optimal_names);
+        labels.push("optimals");
+        y.push(optimals);
     }
-    names = [optimal_names];
-    labels = ["optimals"];
+    
+
     
     for(i = 0; i < selected_graphs.length; i++){
         if(data[`${selected_graphs[i]}_percent`]) {
@@ -393,7 +412,20 @@ function processHistoryData(data){
         }
         
     }
-    graphPerformance(dates, optimals, percents, names, labels);
+
+    
+    for(let i = 0; i < percents.length; i++){
+        y.push(percents[i]);
+    }
+    
+    if(labels.length > 0){
+        graphPerformance(dates, y, names, labels);
+    } else {
+        if(chart != null){
+            chart.destroy();
+        }
+    }
+    
 }
 
 buildButtons();
