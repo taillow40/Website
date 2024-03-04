@@ -1,6 +1,6 @@
 
 currentGraph = 'Total Timesteps';
-graph_options = ['Total Timesteps', 'Accuracy', 'Negative %', 'Reward', 'Profit', 'Weighted Proft', 'Next Weight']
+graph_options = ['Total Timesteps', 'Accuracy', 'Negative %', 'Reward', 'Profit', 'Weighted Proft', 'Next Weight', 'Performance']
 colors = ['#E6194B', '#3CB44B', '#FFE119', '#4363D8', '#F58231', '#911EB4', '#46F0F0', '#F032E6', '#BCF60C', '#FABEBE']
 
 selected_graphs = [];
@@ -60,8 +60,8 @@ function graphNext(x, y, names, labels){
         return {
             label: labels[index], // Use the corresponding label
             data: dataArray, // The data for this line
-            backgroundColor: '#1c2139', // Customize as needed
-            borderColor: '#1c2139', // Customize as needed
+            backgroundColor: colors[index], // Customize as needed
+            borderColor: colors[index], // Customize as needed
             borderWidth: 1
         };
     });
@@ -86,6 +86,7 @@ function graphNext(x, y, names, labels){
             responsive: false, 
             maintainAspectRatio: false, 
             scales: {
+                
                 y: {
                     beginAtZero: true 
                 }
@@ -118,6 +119,92 @@ function graphNext(x, y, names, labels){
         plugins: [ChartDataLabels]
     });
 }
+
+//(dates, optimals, percents, labels);
+function graphPerformance(x, optimals, percents, names, labels){
+    
+    
+    x = x.slice(-10);
+    console.log(x);
+    x = x.map(function(date, index){
+        myDate = new Date(date);
+        return (myDate.getMonth() + 1) + '/' + myDate.getDate();
+    });
+    console.log(x);
+    y = [];
+    y.push(optimals);
+    for(let i = 0; i < percents.length; i++){
+        y.push(percents[i]);
+    }
+    for (let i = 0; i < y.length; i++) {
+        y[i] = y[i].slice(-10); 
+        names[i] = names[i].slice(-10);
+    }
+    
+    var datasets = y.map(function(dataArray, index) {
+        return {
+            label: labels[index], // Use the corresponding label
+            data: dataArray, // The data for this line
+            backgroundColor: colors[index], // Customize as needed
+            borderColor: colors[index], // Customize as needed
+            borderWidth: 1
+        };
+    });
+    const canvas = document.getElementById("graph_canvas");
+    canvas.width = canvas.parentElement.getBoundingClientRect().width;
+    canvas.height = canvas.parentElement.getBoundingClientRect().height;
+    var ctx = canvas.getContext('2d');
+    if(chart){
+        chart.destroy();
+    }
+    chart = new Chart(ctx, {
+        type: 'line', 
+        data: {
+            labels: x, 
+            datasets: datasets
+        },
+        options: {
+            responsive: false, 
+            maintainAspectRatio: false, 
+            scales: {
+                y: {
+                    beginAtZero: true 
+                },
+                x: {
+                    offset: true
+                }
+            },
+            animation: false,
+            plugins: {
+                datalabels: {
+                    color: '#36A2EB',
+                    display: true,
+                    font: {
+                        weight: 'bold'
+                    },
+                    formatter: function(value, context) {
+                        return names[context.datasetIndex][context.dataIndex];
+                    },
+                    anchor: 'end',
+                    align: 'top',
+                    offset: 10,
+                },
+                legend: {
+                    display: true // This will hide the legend
+                }
+            },
+            layout: {
+                padding: {
+                    top: 20,
+                }
+            },
+        },
+        plugins: [ChartDataLabels]
+    });
+}
+
+
+
 
 function parseCSV(data) {
     const rows = data.split('\n');
@@ -235,9 +322,7 @@ function processData(data, fileName){
     cache[fileName.trim()] = data;
 }
 
-buildButtons();
-fetchNames();
-setupInterval();
+
 
 function genericGraph() {
     y = [];
@@ -255,6 +340,8 @@ function genericGraph() {
        }
 
         graphNext(timesteps, y, names, labels);
+    } else if (currentGraph.trim() == "Performance"){
+        displayHistory();
     } else {
         graphData(timesteps, y, labels);
     }
@@ -265,3 +352,50 @@ function setupInterval(){
         fetchCSV();
     }, 5 * 60 * 1000);
 }
+
+function displayHistory(){
+    fetch('stocks/get-csv/history.csv')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(text => {
+                const data = parseCSV(text);
+                processHistoryData(data);
+            })
+            .catch(error => console.error('Error fetching or parsing CSV:', error));
+}
+
+function processHistoryData(data){
+    dates = data['days'];
+    //dates = dates.slice(0, dates.length - 1);
+    optimals = data['optimals'];
+    //optimals = optimals.slice(0, optimals.length - 1);
+    percents = [];
+    optimal_names = [];
+    for(i = 0; i < data['optimals'].length; i++){
+        optimal_names.push("");
+    }
+    names = [optimal_names];
+    labels = ["optimals"];
+    
+    for(i = 0; i < selected_graphs.length; i++){
+        if(data[`${selected_graphs[i]}_percent`]) {
+            percents.push(data[`${selected_graphs[i]}_percent`]);
+            labels.push(selected_graphs[i]);
+            new_names = [];
+            for(j = 0; j < data[`${selected_graphs[i]}_stock`].length; j++){
+                new_names.push(data[`${selected_graphs[i]}_stock`][j].trim() + "," + data[`${selected_graphs[i]}_weight`][j]);
+            }
+            names.push(new_names);
+        }
+        
+    }
+    graphPerformance(dates, optimals, percents, names, labels);
+}
+
+buildButtons();
+fetchNames();
+setupInterval();

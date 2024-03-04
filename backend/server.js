@@ -57,6 +57,8 @@ app.get('/stocks/get-csvs', (req, res) => {
     }
 
     fs.readdir(directoryPath, (err, files) => {
+        files = files.filter(file => file != "history.csv");
+
         if (err) {
             console.error('Error reading directory:', err);
             return res.status(500).send('Error reading directory');
