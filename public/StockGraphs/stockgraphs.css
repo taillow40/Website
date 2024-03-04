@@ -60,6 +60,17 @@
     padding: 5px;
     outline: 1px solid black;
 }
+#display_snp {
+    background-color: #8085a2;
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 120px;
+    width: 100px;
+    height: 30px;
+    padding: 5px;
+    outline: 1px solid black;
+}
 
 #buttons_container{
     border-left: none;

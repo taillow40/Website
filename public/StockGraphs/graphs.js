@@ -3,6 +3,7 @@ currentGraph = 'Total Timesteps';
 graph_options = ['Total Timesteps', 'Accuracy', 'Negative %', 'Reward', 'Profit', 'Weighted Proft', 'Next Weight', 'Performance']
 colors = ['#E6194B', '#3CB44B', '#FFE119', '#4363D8', '#F58231', '#911EB4', '#46F0F0', '#F032E6', '#BCF60C', '#FABEBE']
 show_optimals = false;
+show_snp = false;
 selected_graphs = [];
 chart = null;
 cache = {};
@@ -278,6 +279,7 @@ async function fetchCSV() {
 function buildButtons(){
     gridContainer = document.getElementById('buttons_container');
     optimals_button = document.getElementById('display_optimals');
+    snp_button = document.getElementById('display_snp');
     for(let i = 0; i < graph_options.length; i++){
         const button = document.createElement('button');
         button.innerHTML = graph_options[i];
@@ -301,8 +303,10 @@ function buildButtons(){
             currentGraph = graph_options[i];
             if(currentGraph == 'Performance'){
                 optimals_button.style.display = 'block';
+                snp_button.style.display = 'block';
             } else {
                 optimals_button.style.display = 'none';
+                snp_button.style.display = 'none';
             }
             genericGraph();
             
@@ -323,6 +327,15 @@ function buildButtons(){
             optimals_button.style.backgroundColor = '#8085a2';
         }
         show_optimals = !show_optimals;
+        genericGraph();
+    }
+    snp_button.onclick = function(){
+        if(!show_snp){ 
+            snp_button.style.backgroundColor = '#cbfaff';
+        } else {
+            snp_button.style.backgroundColor = '#8085a2';
+        }
+        show_snp = !show_snp;
         genericGraph();
     }
 }
@@ -396,6 +409,15 @@ function processHistoryData(data){
         names.push(optimal_names);
         labels.push("optimals");
         y.push(optimals);
+    }
+    if(show_snp){
+        snp_names = [];
+        for(i = 0; i < data['snp'].length; i++){
+            snp_names.push("");
+        }
+        names.push(snp_names);
+        labels.push("snp");
+        y.push(data['snp']);
     }
     
 
