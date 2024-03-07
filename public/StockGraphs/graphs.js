@@ -8,13 +8,16 @@ selected_graphs = [];
 chart = null;
 cache = {};
 function graphData(x, y, labels) {
+    var unifiedX = [...new Set(x.flat())].sort((a, b) => a - b);
     var datasets = y.map(function(dataArray, index) {
+        var interpolatedData = interpolateData(x[index], dataArray, unifiedX);
         return {
             label: labels[index], // Use the corresponding label
-            data: dataArray, // The data for this line
+            data: interpolatedData,
             backgroundColor: colors[index], // Customize as needed
             borderColor: colors[index], // Customize as needed
-            borderWidth: 1
+            borderWidth: 1,
+            fill: false, // Set to false to make the line chart without filling under the line
         };
     });
      
@@ -31,7 +34,7 @@ function graphData(x, y, labels) {
     chart = new Chart(ctx, {
         type: 'line', 
         data: {
-            labels: x, 
+            labels: unifiedX,
             datasets: datasets
         },
         options: {
@@ -51,19 +54,59 @@ function graphData(x, y, labels) {
         }
     });
 }
+
+function interpolateData(datasetX, datasetY, unifiedX) {
+    let interpolatedData = [];
+    let lastKnownIndex = -1;
+
+    for (let i = 0; i < unifiedX.length; i++) {
+        let xVal = unifiedX[i];
+        let dataIndex = datasetX.indexOf(xVal);
+
+        if (dataIndex !== -1) {
+            // If the current x value exists in the dataset, use the corresponding y value
+            interpolatedData.push({ x: xVal, y: datasetY[dataIndex] });
+            lastKnownIndex = i; // Update the last known index
+        } else if (lastKnownIndex !== -1 && lastKnownIndex < i) {
+            // If the current x value is missing and we have a previous known value, interpolate
+            let nextKnownIndex = datasetX.findIndex((val, index) => index > dataIndex && xVal < unifiedX[i]);
+            if (nextKnownIndex !== -1) {
+                let nextXVal = unifiedX[nextKnownIndex];
+                let lastXVal = unifiedX[lastKnownIndex];
+                let nextYVal = datasetY[nextKnownIndex];
+                let lastYVal = interpolatedData[lastKnownIndex].y;
+
+                // Linear interpolation formula
+                let interpolatedY = lastYVal + (nextYVal - lastYVal) * (xVal - lastXVal) / (nextXVal - lastXVal);
+                interpolatedData.push({ x: xVal, y: interpolatedY });
+            }
+        } else {
+            // If there's no last known value yet (missing values at the start), push null or an appropriate placeholder
+            interpolatedData.push({ x: xVal, y: null });
+        }
+    }
+
+    return interpolatedData;
+}
+
 function graphNext(x, y, names, labels){
-    x = x.slice(-10);
+    x = x.map(subArray => subArray.slice(-10));
     for (let i = 0; i < y.length; i++) {
         y[i] = y[i].slice(-10); 
         names[i] = names[i].slice(-10);
     }
+    console.log(x)
+    var unifiedX = [...new Set(x.flat())].sort((a, b) => a - b);
+
     var datasets = y.map(function(dataArray, index) {
+        var interpolatedData = interpolateData(x[index], dataArray, unifiedX);
         return {
             label: labels[index], // Use the corresponding label
-            data: dataArray, // The data for this line
+            data: interpolatedData,
             backgroundColor: colors[index], // Customize as needed
             borderColor: colors[index], // Customize as needed
-            borderWidth: 1
+            borderWidth: 1,
+            fill: false, // Set to false to make the line chart without filling under the line
         };
     });
      
@@ -80,7 +123,7 @@ function graphNext(x, y, names, labels){
     chart = new Chart(ctx, {
         type: 'line', 
         data: {
-            labels: x, 
+            labels: unifiedX,
             datasets: datasets
         },
         options: {
@@ -355,7 +398,7 @@ function genericGraph() {
     for(const graph of selected_graphs){
         y.push(cache[graph][currentGraph.trim()]);
         labels.push(graph);
-        (timesteps.length < cache[graph]['Total Timesteps'].length) ? timesteps = cache[graph]['Total Timesteps'] : timesteps;
+        timesteps.push(cache[graph]['Total Timesteps']);
     }
     if(currentGraph.trim() == "Next Weight"){
         names = [];
