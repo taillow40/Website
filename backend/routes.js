@@ -26,5 +26,9 @@ router.get('/meal_maker', (req, res) => {
 router.get('/stocks', (req, res) => {
     res.sendFile(path.join(__dirname, '../public', 'StockGraphs/graphs.html'));
 });
+
+router.get('/evan', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public', 'Evan/evan.html'));
+});
  
 module.exports = router;

@@ -1,0 +1,55 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+    <link rel="stylesheet" href="stylin/index.css">
+    <link rel="stylesheet" href="stylin/samstyle.css">
+    <link rel="stylesheet" href="stylin/defaultStyles.css">
+    <script src="jquery-3.3.1.js"></script>
+    <script src="https://unpkg.com/docx@7.1.0/build/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+
+
+
+
+    
+    <link rel="stylesheet" href="Evan/evan.css">
+    
+    
+
+
+</head>
+
+<body>
+    <div id="content">
+        <div id="left-box" class="box">
+
+        </div>
+        <div id="right-box" class="box">
+
+        </div>
+        <div id="button-box" class="box">
+
+        </div>
+
+    </div>
+    <div id="file-system-div">
+        <div id="save-div">
+            <input type="text" id="file-name" placeholder="File Name">
+            <button class="save-button" onclick="saveAsWord()">Save as Word Document</button>
+        </div>
+        <div id="load-div">
+            <input class="upload-button" type="file" id="upload" accept=".docx"/>
+        </div>
+        
+    </div>
+    <div class="information-div">
+        Ctrl + Arrow to move<br>
+        Ctr + Enter to add new line<br>
+        Hit Save Button to save as Word Document<br>
+        Hit Load Button to load a Word Document (Inconsistent results loading documents not saved from here)<br>
+    </div>
+</body>
+<script src="Evan/evan.js"></script>
+<script src="Evan/save.js"></script>
+<script src="Evan/load.js"></script>
