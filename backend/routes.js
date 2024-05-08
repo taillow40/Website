@@ -31,4 +31,7 @@ router.get('/evan', (req, res) => {
     res.sendFile(path.join(__dirname, '../public', 'Evan/evan.html'));
 });
  
+router.get('/evan2', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public', 'Evan2/evan.html'));
+});
 module.exports = router;

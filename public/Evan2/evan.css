@@ -1,0 +1,104 @@
+#content {
+    display: grid;
+    grid-template-columns: auto auto 20%;
+}
+
+#left-box {
+    grid-column: 1;
+    padding-right: 0px;
+    margin-right: 0px;
+}
+
+#right-box {
+    grid-column: 2;
+    padding-left: 0px;
+    
+}
+
+#button-box {
+    grid-column: 3;
+    
+}
+
+.button-container {
+    display: flex;
+    align-items: center; 
+    justify-content: space-around; 
+}
+
+#button-box button {
+    height: 6px;
+    border: 1px solid black;
+    padding: 5px;
+    width: 100px;
+    margin: 4px;
+    background-color: white;
+}
+
+#button-box .button-container:nth-child(odd) {
+    background-color: #f0f0f0;
+}
+#button-box .button-container:nth-child(even) {
+    background-color: #e0e0e0;
+}
+
+.text-area {
+    resize: vertical;
+    height: 24px;
+    outline: none;
+    border: none;
+}
+
+#left-box .text-area {
+    margin-right: 0px;
+}
+#right-box .text-area {
+    margin-left: 0px;
+}
+
+.text-area:nth-child(odd) {
+    background-color: #f0f0f0;
+}
+.text-area:nth-child(even) {
+    background-color: #e0e0e0;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.save-button {
+    padding: 5px;
+    border: 1px solid black;
+    margin: 5px;
+}
+
+.upload-button {
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.information-div {
+    margin: 15px;
+}
+
+#file-system-div {
+    margin: 15px;
+}
+
+#save-div {
+    border: 1px solid black;
+    width: 370px;
+    padding: 10px;
+    margin: 10px;
+}
+
+#load-div {
+    border: 1px solid black;
+    width: 370px;
+    padding: 10px;
+    margin: 10px;
+}
