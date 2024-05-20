@@ -13,7 +13,7 @@ body {
 }
 
 .main-box__text {
-    padding-top: var(--margin--small);
+    padding-top: var(--margin--large);
     font-size: var(--text-massive);
     color: var(--color-primary);
     text-align: center;
@@ -78,7 +78,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     height: 45%;
-    margin-top: var(--margin--small);
+    margin-top: var(--margin--large);
 
 
 }
@@ -87,25 +87,6 @@ body {
     position: relative;
     background: var(--color-blue-white);
     cursor: pointer;
-}
-.quad-block__section--1 {
-    grid-row: 1 / 2;
-    grid-column: 1 / 2;
-}
-
-.quad-block__section--2 {
-    grid-row: 1 / 2;
-    grid-column: 2 / 3;
-}
-
-.quad-block__section--3 {
-    grid-row: 1 / 2;
-    grid-column: 3 / 4;
-}
-
-.quad-block__section--4 {
-    grid-row: 1 / 2;
-    grid-column: 4 / 5;
 }
 
 .image--default {
@@ -178,4 +159,33 @@ body {
 
 .quad-block__image--4 {
     background-image: url("/images/Game.png");
+}
+
+@media (max-width: 600px) {
+    div.quad-block {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(4, 1fr);
+        height: fit-content;
+        row-gap: 5vh;
+    }
+    .quad-block__section {
+        height: 45vh;
+    }
+
+    .main-box {
+        width: 85vw;
+        height: 55vh;
+    }
+
+    .main-box__text {
+        font-size: 64px;
+    }
+
+    .main-box__projects {
+        width: 60vw;
+    }
+}
+
+.header a.header__index {
+    text-decoration: underline;
 }

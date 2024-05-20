@@ -45,13 +45,16 @@
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
-    top: 50%;
+    top: 25%;
     width: auto;
     height: 100%;
     text-align: center;
 
+}
 
-
+.projectBox_ImageSelector div{
+    margin-left: 3px;
+    margin-right: 3px;
 
 }
 
@@ -66,6 +69,24 @@
     color: darkblue;
     font-size: min(1.2vw, 2.6vh);
     cursor: pointer;
+}
+
+.projectBox_SelectorButton.left {
+    width: 30px; 
+    height: 30px; 
+    background: url('/images/left-arrow.png') no-repeat center center;
+    background-size: contain; 
+    border: none; 
+    cursor: pointer; 
+}
+
+.projectBox_SelectorButton.right {
+    width: 30px; 
+    height: 30px; 
+    background: url('/images/right-arrow.png') no-repeat center center;
+    background-size: contain; 
+    border: none; 
+    cursor: pointer; 
 }
 
 .projectBox_SelectorButton.left {
@@ -176,4 +197,8 @@
     font-size: min(5vw, 10vh);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     cursor: pointer;
+}
+
+.header a.header__projects {
+    text-decoration: underline;
 }
