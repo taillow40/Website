@@ -13,7 +13,7 @@ body {
 }
 
 .main-box__text {
-    padding-top: var(--margin--small);
+    padding-top: var(--margin--large);
     font-size: var(--text-massive);
     color: var(--color-primary);
     text-align: center;
@@ -78,7 +78,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     height: 45%;
-    margin-top: var(--margin--small);
+    margin-top: var(--margin--large);
 
 
 }
@@ -184,4 +184,8 @@ body {
     .main-box__projects {
         width: 60vw;
     }
+}
+
+.header a.header__index {
+    text-decoration: underline;
 }
