@@ -22,7 +22,6 @@
 .footer__column {
     color: var(--color-primary-desaturated);
     font-size: var(--text-mid);
-    grid-row: 1 / 2;
     margin-left: var(--margin--small);
     margin-top: var(--margin--small);
 }
@@ -45,18 +44,14 @@
     height: var(--margin--small);
 }
 
-.footer__column--1 {
-    grid-column: 1 / 2;
-}
 
-.footer__column--2 {
-    grid-column: 2 / 3;
-}
+@media (max-width: 600px) {
+    .footer__content {
+        display: block;
+    }
+    #footer {
+        height: fit-content;
+        padding-top: 1vh;
+    }
 
-.footer__column--3 {
-    grid-column: 3 / 4;
-}
-
-.footer__column--4 {
-    grid-column: 4 / 5;
 }
