@@ -13,17 +13,17 @@ app.use(bp.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, '../public')));
 
 app.post('/whatAmIEating', (req, res) => {
-    if(!req.body.ingredient || req.body.ingredient == ''){
+    if (!req.body.ingredient || req.body.ingredient == '') {
         res.send('Please enter an ingredient');
     }
     let prompt = `List only the names of 3 dishes whose main ingredient is ${req.body.ingredient}`
-    if(req.body.cuisine){
+    if (req.body.cuisine) {
         prompt += ` in the ${req.body.cuisine} cuisine`
-    } 
-    if(req.body.time){
+    }
+    if (req.body.time) {
         prompt += ` and can be made in around ${req.body.time}.`
-    } 
-    
+    }
+
     ai.callChatGPT(prompt)
         .then(response => {
             res.send(response);
@@ -31,10 +31,10 @@ app.post('/whatAmIEating', (req, res) => {
 })
 
 const storage = multer.diskStorage({
-    destination: function(req, file, cb) {
-        cb(null, 'uploads/'); 
+    destination: function (req, file, cb) {
+        cb(null, 'uploads/');
     },
-    filename: function(req, file, cb) {
+    filename: function (req, file, cb) {
         cb(null, file.originalname);
     }
 });
@@ -43,11 +43,29 @@ const upload = multer({ storage: storage });
 
 app.post('/stocks/upload-csv', upload.single('file'), (req, res) => {
     if (!req.file) {
-      return res.status(400).send('No file uploaded.');
+        return res.status(400).send('No file uploaded.');
     }
 
     res.send('File uploaded successfully: ' + req.file.path);
-  });
+});
+
+app.post('/stocks/upload-json', (req, res) => {
+    if (!req.body) {
+        return res.status(400).send('No file uploaded.');
+    }
+    const jsonData = req.body;
+    //const filePath = `uploads/${req.headers['filename']}`;
+    filePath = 'uploads/testing.csv'
+    const jsonString = JSON.stringify(jsonData);
+    fs.writeFile(filePath, jsonString, 'utf8', (err) => {
+        if (err) {
+            console.error('Error writing JSON to file:', err);
+            return res.status(500).json({ message: "Failed to write JSON data to file" });
+        }
+
+        res.status(200).json({ message: "JSON data written to file successfully" });
+    });
+});
 
 app.get('/stocks/get-csvs', (req, res) => {
     const directoryPath = path.join('uploads');
@@ -82,7 +100,7 @@ app.get('/stocks/get-csv/:filename', (req, res) => {
         } else {
             res.setHeader('Content-Type', 'text/csv');
             res.setHeader('Content-Disposition', 'attachment; filename="' + filename + '"');
-            
+
             // Send the file
             res.sendFile(filePath);
         }
