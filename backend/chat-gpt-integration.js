@@ -3,7 +3,7 @@ const config = require('../config.js');
 const API_KEY = config.openai;
 
 const openai = axios.create({
-    baseURL: 'https://api.openai.com/v1/engines/text-davinci-003', 
+    baseURL: 'https://api.openai.com/v1/engines/gpt-3.5-turbo-instruct', 
     timeout: 10000,
     headers: {
         'Authorization': `Bearer ${API_KEY}`,
