@@ -24,12 +24,36 @@
         <h1 class="titleBox">
             <div class="title-box__title">Personal Projects</div>
             <div class="titleText">
-                I am always looking for ideas that I can use in my day to day life. Most of my personal projects
-                involve this in some way, making small daily tasks easier and more enjoyable. </div>
+                A collection of things I've built &mdash; from live hosted apps to school projects, hackathons,
+                and weekend experiments. Most of them solve a small problem from my own day-to-day.
+            </div>
         </h1>
         <div class="content">
+
+            <!-- Sonar — featured live app -->
+            <div class="projectBox projectBox--text" id="Sonar">
+                <div class="project-box__header">
+                    <span class="project-box__title">Sonar &mdash; Multimodel AI Platform</span>
+                    <span class="project-box__date">Jan 2024 &ndash; Present</span>
+                </div>
+                <a class="project-box__link" href="https://sonar.starboreta.com" target="_blank" rel="noopener">sonar.starboreta.com &rarr;</a>
+                <div class="project-box__content project-box__content--full">
+                    <ul>
+                        <li>A platform that prompts multiple LLM models at once and compares responses with fully editable
+                            prompts and outputs.</li>
+                        <li>React Native front end with Redux for state management.</li>
+                        <li>Python FastAPI RESTful backend on a PostgreSQL database.</li>
+                        <li>Hosted on a DigitalOcean Linux server.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Personal Dashboard -->
             <div class="projectBox" id="Personal Dashboard">
-                <div class="project-box__header">Personal Dashboard</div>
+                <div class="project-box__header">
+                    <span class="project-box__title">Personal Dashboard</span>
+                    <span class="project-box__date">Feb &ndash; Jun 2022</span>
+                </div>
                 <div class="projectBox_ImageContainer">
                     <div class="projectBox_Image"></div>
                     <div class=projectBox_ImageSelectorThings>
@@ -41,11 +65,11 @@
 
                 <div class="project-box__content">
                     <ul>
-                        <li>A website that displays my personal tasks and health numbers for the day, reminding me when
-                            there are things that need to be done. </li>
-                        <li>NodeJS backend using firebase as well as google calendar integration. </li>
-                        <li>React frontend, it was my first project in React and taught me about useState and useEffect.
-                        </li>
+                        <li>A website that displays personal tasks and health metrics like hydration, reminding me when
+                            something needs to be done.</li>
+                        <li>NodeJS backend interfacing with Firebase and Google Calendar.</li>
+                        <li>React frontend &mdash; my first React project, focused on useState, useEffect, and Redux
+                            store/reducer patterns.</li>
                     </ul>
                     <script>
                         SetupButtons(["/images/PersonalDashboard.png", "/images/PersonalDashboard_addition.png", "/images/PersonalDashboard_Firebase.png"], "Personal Dashboard")
@@ -53,8 +77,13 @@
 
                 </div>
             </div>
+
+            <!-- CookCraft (Food for Me) -->
             <div class="projectBox" id="Food for Me">
-                <div class="project-box__header">Food for Me</div>
+                <div class="project-box__header">
+                    <span class="project-box__title">CookCraft (Food for Me)</span>
+                    <span class="project-box__date">Aug 2021 &ndash; Aug 2023</span>
+                </div>
                 <div class="projectBox_ImageContainer">
                     <div class="projectBox_Image"></div>
                     <div class=projectBox_ImageSelectorThings>
@@ -66,22 +95,72 @@
 
                 <div class="project-box__content">
                     <ul>
-                        <li> A web app that handles day to day food management.
-                        </li>
-                        <li>AngularJS to build a frontend to manage and record the contents of my pantry and fridge.
-                        </li>
-                        <li>A recipe book with an interface that assists in deciding on dinner using a tournament style
-                            process.
-                        </li>
+                        <li>A web app for day-to-day food management.</li>
+                        <li>AngularJS frontend to manage pantry and fridge contents.</li>
+                        <li>A recipe book interface that helps decide dinner using a tournament-style process.</li>
                     </ul>
                     <script>
                         SetupButtons(["/images/FK_Terminal.png", "/images/FK_KMenu.png", "/images/FK_KSelect.png"], "Food for Me")
                     </script>
-
                 </div>
             </div>
-            <div class="projectBox" id="Led Interface">
-                <div class="project-box__header">Led Interface</div>
+
+            <!-- Stock AI Q Learner -->
+            <div class="projectBox projectBox--text" id="Stock AI">
+                <div class="project-box__header">
+                    <span class="project-box__title">Stock AI Reinforcement Q Learner</span>
+                    <span class="project-box__date">Jan &ndash; Jun 2024</span>
+                </div>
+                <div class="project-box__content project-box__content--full">
+                    <ul>
+                        <li>Built an ETL pipeline with pandas and NumPy for Interactive Brokerage data.</li>
+                        <li>Trained models with OpenAI Gymnasium and reinforcement learning to predict stock fluctuations.</li>
+                        <li>Built a dashboard with JavaScript and Matplotlib to monitor and compare model progress.</li>
+                        <li>Achieved a return outperforming the S&amp;P 500.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Samdroid -->
+            <div class="projectBox projectBox--text" id="Samdroid">
+                <div class="project-box__header">
+                    <span class="project-box__title">Samdroid &mdash; Personal Android App</span>
+                    <span class="project-box__date">Feb 2023 &ndash; Present</span>
+                </div>
+                <div class="project-box__content project-box__content--full">
+                    <ul>
+                        <li>An Android app in Kotlin and Java (Android Studio) that automates daily game tasks &mdash; PVP
+                            battles, buddy management in Pokemon Go, and dialogue handling in Genshin Impact.</li>
+                        <li>Object-oriented design with separate classes for screen reading, state interpretation, and
+                            device input.</li>
+                        <li>Structured for maintainability by isolating detection, decision-making, and action logic into
+                            clean components.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Kanbas LMS -->
+            <div class="projectBox projectBox--text" id="Kanbas">
+                <div class="project-box__header">
+                    <span class="project-box__title">Kanbas Learning Management System</span>
+                    <span class="project-box__date">Sep &ndash; Dec 2023</span>
+                </div>
+                <div class="project-box__content project-box__content--full">
+                    <ul>
+                        <li>React-based web app enabling assignments, grading, and student submissions.</li>
+                        <li>NodeJS backend for data persistence using REST APIs.</li>
+                        <li>Managed application state with Redux alongside React state and effect hooks, JSX, and ES6
+                            modules.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- World of Blocks -->
+            <div class="projectBox" id="World of Blocks">
+                <div class="project-box__header">
+                    <span class="project-box__title">World of Blocks</span>
+                    <span class="project-box__date">Aug 2016 &ndash; Jun 2023</span>
+                </div>
                 <div class="projectBox_ImageContainer">
                     <div class="projectBox_Image"></div>
                     <div class=projectBox_ImageSelectorThings>
@@ -93,23 +172,82 @@
 
                 <div class="project-box__content">
                     <ul>
-                        <li>A basic Led Controller that uses a Raspberry Pi to respond to HTTP requests</li>
-                        <li>Uses NodeJS to host a basic server off the Raspberry Pi</li>
-                        <li>Simple electronic circuit responds to outputs from the Raspberry Pi and converts them with
-                            MOSFETs</li>
+                        <li>A level-based 2D iOS game built in Unity, styled after Angry Birds.</li>
+                        <li>Designed balanced level progression with increasing complexity and new mechanics.</li>
+                        <li>Taught myself Unity fundamentals through this project.</li>
+                    </ul>
+                    <script>
+                        SetupButtons(["/images/wob_homepage.png", "/images/wob_level0.png", "/images/wob_level41.png"],
+                            "World of Blocks")
+                    </script>
+                </div>
+            </div>
 
+            <!-- LED Interface -->
+            <div class="projectBox" id="Led Interface">
+                <div class="project-box__header">
+                    <span class="project-box__title">LED Interface</span>
+                    <span class="project-box__date">Jul 2022</span>
+                </div>
+                <div class="projectBox_ImageContainer">
+                    <div class="projectBox_Image"></div>
+                    <div class=projectBox_ImageSelectorThings>
+                        <div class="projectBox_ImageSelector"></div>
+                        <button class="projectBox_SelectorButton left"></button>
+                        <button class="projectBox_SelectorButton right"></button>
+                    </div>
+                </div>
 
+                <div class="project-box__content">
+                    <ul>
+                        <li>An RGB LED controller built with a Raspberry Pi and basic electronics.</li>
+                        <li>NodeJS server on the Pi exposes an HTTP API for tablet-based lighting control and time-based
+                            automation.</li>
+                        <li>Simple MOSFET-based circuit converts Pi GPIO outputs into LED control signals.</li>
                     </ul>
                     <script>
                         SetupButtons(["/images/RGBInterface.png", "/images/RGBInterface2.png",
                             "/images/RGBBreadboard.JPG"
                         ], "Led Interface")
                     </script>
-
                 </div>
             </div>
-            <div class="projectBox" id="World of Blocks">
-                <div class="project-box__header">World Of Blocks</div>
+
+            <!-- Labyrinth -->
+            <div class="projectBox projectBox--text" id="Labyrinth">
+                <div class="project-box__header">
+                    <span class="project-box__title">Labyrinth</span>
+                    <span class="project-box__date">Jan &ndash; May 2024</span>
+                </div>
+                <div class="project-box__content project-box__content--full">
+                    <ul>
+                        <li>Managed mobile tilt sensors for a labyrinth-style game.</li>
+                        <li>Developed levels, controls, scoring, and collisions in Unity using C#.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Crime Prediction Models -->
+            <div class="projectBox projectBox--text" id="Crime Prediction">
+                <div class="project-box__header">
+                    <span class="project-box__title">Crime Prediction Models</span>
+                    <span class="project-box__date">Sep &ndash; Dec 2023</span>
+                </div>
+                <div class="project-box__content project-box__content--full">
+                    <ul>
+                        <li>Built scikit-learn models to predict crime patterns in the greater Boston area.</li>
+                        <li>Created Matplotlib visualizations of community crime rates.</li>
+                        <li>Presented findings and conclusions to peers.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Linux Shell, Database, Filesystem -->
+            <div class="projectBox" id="Linux">
+                <div class="project-box__header">
+                    <span class="project-box__title">Linux Shell, Database, and Filesystem</span>
+                    <span class="project-box__date">Oct &ndash; Nov 2021</span>
+                </div>
                 <div class="projectBox_ImageContainer">
                     <div class="projectBox_Image"></div>
                     <div class=projectBox_ImageSelectorThings>
@@ -121,20 +259,25 @@
 
                 <div class="project-box__content">
                     <ul>
-                        <li>A game designed in Unity for IOS</li>
-                        <li>Written in almost entirely C# it's designed in a similar fashion to Angry Birds</li>
-                        <li>Players progress through the levels and over time new mechanics get introduced</li>
-
+                        <li>Through a class on computer systems, built a Linux shell, a multithreaded database, and a
+                            file system.</li>
+                        <li>The shell supported I/O redirection, pipes, and sequential, conditional, and background
+                            command execution.</li>
+                        <li>The database used hand-written data protection with locks to ensure continuity.</li>
+                        <li>The file system mapped data blobs to file names and paths.</li>
                     </ul>
                     <script>
-                        SetupButtons(["/images/wob_homepage.png", "/images/wob_level0.png", "/images/wob_level41.png"],
-                            "World of Blocks")
+                        SetupButtons(["/images/Linux.png"], "Linux")
                     </script>
-
                 </div>
             </div>
+
+            <!-- Overwatch Team Scraper -->
             <div class="projectBox" id="Overwatch Webscraper">
-                <div class="project-box__header">Overwatch Webscraper</div>
+                <div class="project-box__header">
+                    <span class="project-box__title">Overwatch Team Scraper</span>
+                    <span class="project-box__date">Sep 2021</span>
+                </div>
                 <div class="projectBox_ImageContainer">
                     <div class="projectBox_Image"></div>
                     <div class=projectBox_ImageSelectorThings>
@@ -146,50 +289,61 @@
 
                 <div class="project-box__content">
                     <ul>
-                        <li>A simple webscraper that takes the link to a Team in our tournament website, and builds a
-                            summary sheet</li>
-                        <li>Written entirely in Google Scripts, the program first scrapes the tournament website for the
-                            opponents players, and then queries a database for information about the players</li>
-
-
+                        <li>Generates a scouting datasheet from a team's link on our tournament website.</li>
+                        <li>Written in Google Scripts &mdash; scrapes the tournament site for opponents' players, then
+                            queries a database for player information.</li>
                     </ul>
                     <script>
                         SetupButtons(["/images/OWWS_Gamebattles.png", "/images/OWWS_Chart.png",
                             "/images/OWWS_Sorted.png"
                         ], "Overwatch Webscraper")
                     </script>
-
                 </div>
             </div>
-            <div class="projectBox" id="Linux">
-                <div class="project-box__header">Linux Shell, Database, and Filesystem</div>
-                <div class="projectBox_ImageContainer">
-                    <div class="projectBox_Image"></div>
-                    <div class=projectBox_ImageSelectorThings>
-                        <div class="projectBox_ImageSelector"></div>
-                        <button class="projectBox_SelectorButton left"></button>
-                        <button class="projectBox_SelectorButton right"></button>
-                    </div>
-                </div>
 
-                <div class="project-box__content">
+            <!-- Recipe Book Calendar Integration -->
+            <div class="projectBox projectBox--text" id="Recipe Calendar">
+                <div class="project-box__header">
+                    <span class="project-box__title">Recipe Book Calendar Integration</span>
+                    <span class="project-box__date">Aug &ndash; Dec 2021</span>
+                </div>
+                <div class="project-box__content project-box__content--full">
                     <ul>
-                        <li>Through a class on computer systems, built a linux shell, a multithreaded database, and a
-                            file system</li>
-                        <li>The shell supported I/O redirection and pipes, as well as sequential, conditional, and
-                            background command execution</li>
-                        <li>The key point of the database is that we wrote our own data protection, ensuring continuity
-                            using locks</li>
-                        <li>The file system was a basic recreation of the linux file system, mapping data blobs to file
-                            names and paths</li>
-
+                        <li>Integrated a recipe book into Google Sheets to generate ingredient lists.</li>
+                        <li>Managed data via Google Scripts and Google Sheets integration.</li>
                     </ul>
-                    <script>
-                        SetupButtons(["/images/Linux.png"], "Linux")
-                    </script>
-
                 </div>
             </div>
+
+            <!-- Tech Share — Hackathon -->
+            <div class="projectBox projectBox--text" id="Tech Share">
+                <div class="project-box__header">
+                    <span class="project-box__title">Tech Share &mdash; SET Hacks</span>
+                    <span class="project-box__date">Jul 2020</span>
+                </div>
+                <div class="project-box__content project-box__content--full">
+                    <ul>
+                        <li>Hackathon project: a website connecting people with old tech such as the Wii.</li>
+                        <li>Designed a Firebase database and built backend functionality.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Professional Website -->
+            <div class="projectBox projectBox--text" id="Professional Website">
+                <div class="project-box__header">
+                    <span class="project-box__title">Professional Website</span>
+                    <span class="project-box__date">Jun 2022 &ndash; Present</span>
+                </div>
+                <a class="project-box__link" href="https://www.samuelptomlinson.com" target="_blank" rel="noopener">samuelptomlinson.com &rarr;</a>
+                <div class="project-box__content project-box__content--full">
+                    <ul>
+                        <li>This site &mdash; my personal portfolio at samuelptomlinson.com.</li>
+                        <li>NodeJS + Express backend, vanilla HTML/CSS/JS frontend.</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
         <div class="bottomSpacer"></div>
         <div id="footer"></div>

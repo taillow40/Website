@@ -1,92 +1,332 @@
 body {
     margin: 0;
-    
+    background-color: var(--color-background);
 }
 
-.main-box {
+/* ============================================================
+   HERO — apps are the focus
+   ============================================================ */
+
+.hero {
+    position: relative;
     width: 100%;
-    height: 85vh;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: var(--color-blue-white);
-    
+    min-height: 88vh;
+    background:
+        radial-gradient(ellipse 80% 50% at 50% 0%, rgba(203, 250, 255, 0.7), transparent 70%),
+        radial-gradient(circle at 20% 80%, rgba(64, 81, 128, 0.18), transparent 55%),
+        radial-gradient(circle at 80% 60%, rgba(73, 132, 165, 0.2), transparent 50%),
+        linear-gradient(180deg, #d4eef5 0%, #a8d4e0 45%, #7ab8cc 100%);
+    padding: 70px 5% 130px;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
 }
 
-.main-box__text {
-    padding-top: var(--margin--large);
-    font-size: var(--text-massive);
-    color: var(--color-primary);
-    text-align: center;
+/* Light rays filtering through water from above */
+.hero__light-rays {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(105deg, transparent 30%, rgba(255, 255, 255, 0.12) 35%, transparent 40%),
+        linear-gradient(95deg, transparent 55%, rgba(255, 255, 255, 0.08) 60%, transparent 65%),
+        linear-gradient(110deg, transparent 70%, rgba(255, 255, 255, 0.1) 75%, transparent 80%);
+    pointer-events: none;
+    mix-blend-mode: screen;
 }
 
-.main-box__link {
-    padding-top: var(--margin--large);
-    font-size: var(--text-large);
-    color: var(--color-link);
-    text-align: center;
-    text-decoration: none;
+/* Falling rain */
+.hero__rain {
+    position: absolute;
+    inset: -20px 0 0 0;
+    background-image:
+        repeating-linear-gradient(
+            100deg,
+            transparent 0,
+            transparent 28px,
+            rgba(255, 255, 255, 0.35) 28px,
+            rgba(255, 255, 255, 0.35) 29px
+        ),
+        repeating-linear-gradient(
+            100deg,
+            transparent 0,
+            transparent 64px,
+            rgba(255, 255, 255, 0.22) 64px,
+            rgba(255, 255, 255, 0.22) 65px
+        );
+    animation: rain 0.9s linear infinite;
+    pointer-events: none;
+    opacity: 0.5;
+    mask-image: linear-gradient(180deg, white 0%, white 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(180deg, white 0%, white 70%, transparent 100%);
+}
+
+@keyframes rain {
+    0% { background-position: 0 0, 0 0; }
+    100% { background-position: -20px 120px, -45px 120px; }
+}
+
+/* Rising bubbles */
+.hero__bubbles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -60px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1));
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+    animation: rise linear infinite;
+    opacity: 0;
+}
+
+@keyframes rise {
+    0% { transform: translate(0, 0) scale(0.8); opacity: 0; }
+    10% { opacity: 0.75; }
+    90% { opacity: 0.6; }
+    100% { transform: translate(20px, -110vh) scale(1.1); opacity: 0; }
+}
+
+.bubble--1 { left: 8%;  width: 14px; height: 14px; animation-duration: 14s; animation-delay: 0s; }
+.bubble--2 { left: 22%; width: 22px; height: 22px; animation-duration: 18s; animation-delay: 3s; }
+.bubble--3 { left: 38%; width: 10px; height: 10px; animation-duration: 11s; animation-delay: 6s; }
+.bubble--4 { left: 52%; width: 18px; height: 18px; animation-duration: 16s; animation-delay: 1s; }
+.bubble--5 { left: 66%; width: 8px;  height: 8px;  animation-duration: 10s; animation-delay: 8s; }
+.bubble--6 { left: 78%; width: 26px; height: 26px; animation-duration: 20s; animation-delay: 4s; }
+.bubble--7 { left: 90%; width: 12px; height: 12px; animation-duration: 13s; animation-delay: 7s; }
+.bubble--8 { left: 45%; width: 16px; height: 16px; animation-duration: 17s; animation-delay: 11s; }
+
+.hero__wave-divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 90px;
+    pointer-events: none;
+    line-height: 0;
+}
+
+.hero__wave-divider svg {
+    width: 100%;
+    height: 100%;
     display: block;
 }
 
-.main-box__projects {
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-column-gap: 5%;
-    grid-template-rows: 100%;
-    width: 50%;
-    aspect-ratio: 3;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: var(--margin--large);
+/* Keep content above the water effects */
+.hero__tagline,
+.hero__apps {
+    position: relative;
+    z-index: 1;
 }
 
-.main-box__projects > a {
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    transform: translate(-50%, -50%);
-    height: 100%;
+.hero__tagline {
+    font-size: var(--text-giant);
+    color: var(--color-primary);
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin: 0;
+}
+
+.hero__apps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--margin--medium);
+    max-width: 1100px;
     width: 100%;
-    overflow: hidden;
-    left: 50%;
-    top: 50%;
+}
+
+.app-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    border: 1px solid var(--color-blue-blue-white);
+    border-radius: 16px;
+    padding: 44px 28px 32px;
+    text-decoration: none;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.app-card:hover {
+    border-color: var(--color-secondary);
+    transform: translateY(-6px);
+    box-shadow: 0 18px 36px rgba(28, 33, 57, 0.10);
+}
+
+.app-card__icon {
+    width: 72px;
+    height: 72px;
+    color: var(--color-quaternary);
+    margin-bottom: 24px;
+    transition: color 0.2s ease;
+}
+
+.app-card:hover .app-card__icon {
+    color: var(--color-secondary);
+}
+
+.app-card__title {
+    color: var(--color-primary);
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+}
+
+.app-card__desc {
+    color: var(--color-primary-desaturated);
+    font-size: var(--text-mid);
+    margin-bottom: 16px;
+}
+
+.app-card__domain {
+    color: var(--color-secondary);
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 13px;
+}
+
+/* ============================================================
+   PROJECTS STRIP — small secondary row
+   ============================================================ */
+
+.projects-strip {
+    background: linear-gradient(180deg, white 0%, #eaf6f9 100%);
+    padding: 60px 5% 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
     position: relative;
 }
 
-.main-box__projects__food-is-good {
-    grid-column: 1 / 2;
+.projects-strip__link {
+    color: var(--color-link);
+    font-size: var(--text-large);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.15s ease;
+}
+
+.projects-strip__link:hover {
+    color: var(--color-secondary);
+}
+
+.projects-strip__circles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    opacity: 0.75;
+}
+
+.projects-strip__circle {
+    width: 88px;
+    height: 88px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: block;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.projects-strip__circle:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.projects-strip__circle--food {
     background-image: url("/images/food-is-goodCircle.png");
 }
 
-.main-box__projects__block-game {
-    grid-column: 2 / 3;
+.projects-strip__circle--block {
     background-image: url("/images/BlockGameIconCircle.png");
 }
 
-.main-box__projects__dashboard {
-    grid-column: 3 / 4;
+.projects-strip__circle--dashboard {
     background-image: url("/images/PersonalDashboard.png");
-    background-size: contain !important;
 }
+
+/* ============================================================
+   QUAD BLOCK
+   ============================================================ */
 
 .quad-block {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 5%;
+    column-gap: 24px;
     grid-template-rows: 100%;
-    width: 85%;
-    margin-left: auto;
-    margin-right: auto;
-    height: 45%;
-    margin-top: var(--margin--large);
-
-
+    width: 100%;
+    padding: 80px 7.5% 100px;
+    box-sizing: border-box;
+    background:
+        radial-gradient(ellipse 90% 50% at 50% 100%, rgba(73, 132, 165, 0.18), transparent 70%),
+        linear-gradient(180deg, #eaf6f9 0%, #c1e3ed 60%, #a8d4e0 100%);
+    position: relative;
 }
 
-.quad-block__section{
+/* Animated rising bubbles in the background — diving deeper */
+.quad-block::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle 8px at 12% 80%, rgba(255, 255, 255, 0.5) 40%, transparent 41%),
+        radial-gradient(circle 5px at 28% 60%, rgba(255, 255, 255, 0.4) 40%, transparent 41%),
+        radial-gradient(circle 10px at 48% 85%, rgba(255, 255, 255, 0.45) 40%, transparent 41%),
+        radial-gradient(circle 6px at 68% 55%, rgba(255, 255, 255, 0.5) 40%, transparent 41%),
+        radial-gradient(circle 9px at 88% 75%, rgba(255, 255, 255, 0.4) 40%, transparent 41%),
+        radial-gradient(circle 4px at 78% 35%, rgba(255, 255, 255, 0.5) 40%, transparent 41%);
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.quad-block__section {
     position: relative;
-    background: var(--color-blue-white);
+    background: white;
     cursor: pointer;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid rgba(64, 81, 128, 0.08);
+    box-shadow: 0 4px 14px rgba(28, 33, 57, 0.06);
+    padding-bottom: 28px;
+    z-index: 1;
+}
+
+/* Wave accent at the bottom of each card */
+.quad-block__section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 6' preserveAspectRatio='none'><path d='M0,3 C10,6 20,0 30,3 C40,6 50,0 60,3 L60,6 L0,6 Z' fill='%234984a5'/></svg>");
+    background-size: 60px 6px;
+    background-repeat: repeat-x;
+    opacity: 0.65;
+    transition: opacity 0.2s ease;
+}
+
+.quad-block__section:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(28, 33, 57, 0.14);
+}
+
+.quad-block__section:hover::after {
+    opacity: 1;
 }
 
 .image--default {
@@ -121,19 +361,16 @@ body {
     color: var(--color-primary);
     padding-left: 10%;
     padding-right: 10%;
-    /*text-align: center;
-    transform: translate(-50%, 0);
-    color: white;
-    text-shadow: 1px 0 0 black, 0 -1px 0 black, 0 1px 0 black, -1px 0 0 black;
-    z-index: 1;
-    font-size: var(--text-massive); */
+    font-size: 14px;
+    line-height: 1.55;
 }
 .quad-block__title {
     color: var(--color-primary);
     padding-left: 10%;
     padding-right: 10%;
-    font-weight: bold;
+    font-weight: 700;
     font-size: var(--text-large);
+    letter-spacing: -0.01em;
 }
 
 .quad-block__link {
@@ -143,6 +380,12 @@ body {
     padding-left: 10%;
     padding-right: 10%;
     padding-top: var(--margin--small);
+    font-weight: 500;
+    transition: color 0.15s ease;
+}
+
+.quad-block__section:hover .quad-block__link {
+    color: var(--color-secondary);
 }
 
 .quad-block__image--1 {
@@ -161,7 +404,37 @@ body {
     background-image: url("/images/Game.png");
 }
 
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+    .hero__apps {
+        grid-template-columns: 1fr;
+        max-width: 440px;
+    }
+}
+
 @media (max-width: 600px) {
+    .hero {
+        min-height: auto;
+        padding: 50px 5% 60px;
+        gap: 40px;
+    }
+
+    .hero__tagline {
+        font-size: 56px;
+    }
+
+    .projects-strip__circles {
+        gap: 24px;
+    }
+
+    .projects-strip__circle {
+        width: 64px;
+        height: 64px;
+    }
+
     div.quad-block {
         grid-template-columns: 100%;
         grid-template-rows: repeat(4, 1fr);
@@ -170,19 +443,6 @@ body {
     }
     .quad-block__section {
         height: 45vh;
-    }
-
-    .main-box {
-        width: 85vw;
-        height: 55vh;
-    }
-
-    .main-box__text {
-        font-size: 64px;
-    }
-
-    .main-box__projects {
-        width: 60vw;
     }
 }
 

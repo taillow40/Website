@@ -1,6 +1,39 @@
-.body{
+.body {
     background-color: var(--color-blue-white);
 }
+
+/* Title area — surface-of-the-water gradient */
+.titleBox {
+    height: 40%;
+    background:
+        radial-gradient(ellipse 80% 50% at 50% 0%, rgba(203, 250, 255, 0.7), transparent 70%),
+        linear-gradient(180deg, #d4eef5 0%, #c1e3ed 100%);
+    padding-bottom: var(--margin--large);
+    position: relative;
+}
+
+.title-box__title {
+    padding-top: var(--margin--large);
+    font-size: var(--text-massive);
+    font-weight: 700;
+    text-align: center;
+    color: var(--color-primary);
+    letter-spacing: -0.02em;
+}
+
+.titleText {
+    text-align: center;
+    font-size: var(--text-mid);
+    color: var(--color-secondary);
+    padding-top: var(--margin--small);
+    font-weight: normal;
+    width: 80%;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.55;
+}
+
 .barProjects {
     text-decoration-line: underline !important;
 }
@@ -8,23 +41,77 @@
 .content {
     background-color: var(--color-blue-white);
     width: 100%;
-    
 }
+
+/* Alternating "deeper water" stripes */
 .content > :nth-child(odd) {
-    background-color: var(--color-background);
+    background-color: white;
+}
+
+.content > :nth-child(even) {
+    background-color: var(--color-blue-white);
 }
 
 .projectBox {
-    padding: 2%;
+    padding: 2.5% 5% 2.5% 15%;
     position: relative;
-    padding-left: 15%;
     height: 40%;
+    border-left: 3px solid transparent;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.projectBox:hover {
+    border-left-color: var(--color-quaternary);
+}
+
+/* Text-only projects (no image carousel) — more compact */
+.projectBox--text {
+    height: auto;
+    min-height: 0;
+    padding-top: var(--margin--medium);
+    padding-bottom: var(--margin--medium);
 }
 
 .project-box__header {
-    font-size: var(--text-large);
-    font-weight: bold;
     padding-top: var(--margin--small);
+    color: var(--color-primary);
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.project-box__title {
+    font-size: var(--text-large);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.project-box__date {
+    font-size: 13px;
+    color: var(--color-quaternary);
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-weight: 500;
+}
+
+.project-box__link {
+    display: inline-block;
+    margin-top: 6px;
+    color: var(--color-link);
+    text-decoration: none;
+    font-size: var(--text-mid);
+    font-weight: 500;
+    transition: color 0.15s ease;
+}
+
+.project-box__link:hover {
+    color: var(--color-secondary);
+    text-decoration: underline;
+}
+
+.project-box__content--full {
+    width: auto;
+    max-width: 75%;
 }
 
 .projectBox_Image {
@@ -38,7 +125,9 @@
     top: 45%;
     position: absolute;
     background-color: white;
-    border: 1px solid black;
+    border: 1px solid rgba(64, 81, 128, 0.25);
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(28, 33, 57, 0.08);
 }
 
 .projectBox_ImageSelector {
@@ -49,13 +138,11 @@
     width: auto;
     height: 100%;
     text-align: center;
-
 }
 
-.projectBox_ImageSelector div{
+.projectBox_ImageSelector div {
     margin-left: 3px;
     margin-right: 3px;
-
 }
 
 .projectBox_SelectorButton {
@@ -66,42 +153,51 @@
     border: none;
     background-color: rgba(255, 255, 255, 0);
     font-weight: bold;
-    color: darkblue;
+    color: var(--color-secondary);
     font-size: min(1.2vw, 2.6vh);
     cursor: pointer;
 }
 
 .projectBox_SelectorButton.left {
-    width: 30px; 
-    height: 30px; 
+    width: 30px;
+    height: 30px;
     background: url('/images/left-arrow.png') no-repeat center center;
-    background-size: contain; 
-    border: none; 
-    cursor: pointer; 
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.15s ease;
+}
+
+.projectBox_SelectorButton.left:hover {
+    opacity: 1;
 }
 
 .projectBox_SelectorButton.right {
-    width: 30px; 
-    height: 30px; 
+    width: 30px;
+    height: 30px;
     background: url('/images/right-arrow.png') no-repeat center center;
-    background-size: contain; 
-    border: none; 
-    cursor: pointer; 
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.15s ease;
+}
+
+.projectBox_SelectorButton.right:hover {
+    opacity: 1;
 }
 
 .projectBox_SelectorButton.left {
     left: 10%;
-
 }
 
 .projectBox_SelectorButton.right {
     left: 90%;
-
 }
 
 
 .projectBox_ImageSelectorThings {
-
     position: absolute;
     left: 70%;
     top: 95%;
@@ -114,30 +210,14 @@
     width: 40%;
     padding-top: 1%;
     font-size: var(--text-mid);
-}
-
-.titleBox {
-    height: 40%;
-}
-
-.title-box__title{
-    padding-top: var(--margin--large);
-    font-size: var(--text-massive);
-    font-weight: bold;
-    text-align: center;
     color: var(--color-primary);
+    line-height: 1.55;
 }
 
-.titleText {
-    text-align: center;
-    font-size: var(--text--default);
-    color: var(--color-secondary);
-    padding-top: var(--margin--small);
-    font-weight: normal;
-    text-align: center;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+#ImageDisplay {
+    background: rgba(28, 33, 57, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 #ImageDisplay button {
@@ -155,12 +235,10 @@
 
 .ImageDisplay_SelectorButton.left {
     left: 5%;
-
 }
 
 .ImageDisplay_SelectorButton.right {
     left: 95%;
-
 }
 
 .ImageDisplay_Image {
@@ -174,7 +252,8 @@
     top: 45%;
     position: absolute;
     cursor: pointer;
-    border: 1px solid black;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
 }
 
 .ImageDisplay_ImageSelector {
@@ -185,7 +264,6 @@
     width: auto;
     height: 5%;
     text-align: center;
-
 }
 
 .ImageDisplay_X {
