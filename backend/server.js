@@ -1,5 +1,4 @@
 const express = require('express');
-const multer = require('multer');
 const app = express();
 const path = require('path');
 const routes = require('./routes.js');
@@ -7,14 +6,21 @@ const bp = require('body-parser');
 const ai = require('./chat-gpt-integration.js');
 const fs = require('fs');
 
+app.disable('x-powered-by');
 app.use('/', routes)
-app.use(bp.json())
-app.use(bp.urlencoded({ extended: true }))
+app.use(bp.json({ limit: '10kb' }))
+app.use(bp.urlencoded({ extended: true, limit: '10kb' }))
+
+const UPLOADS_DIR = path.join(__dirname, '../uploads');
 app.use(express.static(path.join(__dirname, '../public')));
 
 app.post('/whatAmIEating', (req, res) => {
-    if (!req.body.ingredient || req.body.ingredient == '') {
-        res.send('Please enter an ingredient');
+    const fields = ['ingredient', 'cuisine', 'time'];
+    if (fields.some(f => req.body[f] !== undefined && (typeof req.body[f] !== 'string' || req.body[f].length > 50))) {
+        return res.status(400).send('Invalid input');
+    }
+    if (!req.body.ingredient) {
+        return res.status(400).send('Please enter an ingredient');
     }
     let prompt = `List only the names of 3 dishes whose main ingredient is ${req.body.ingredient}`
     if (req.body.cuisine) {
@@ -25,62 +31,23 @@ app.post('/whatAmIEating', (req, res) => {
     }
 
     ai.callChatGPT(prompt)
-        .then(response => {
-            res.send(response);
-        });
+        .then(response => res.send(response || 'Something went wrong, try again.'))
+        .catch(() => res.status(500).send('Something went wrong, try again.'));
 })
 
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, 'uploads/');
-    },
-    filename: function (req, file, cb) {
-        cb(null, file.originalname);
-    }
-});
-
-const upload = multer({ storage: storage });
-
-app.post('/stocks/upload-csv', upload.single('file'), (req, res) => {
-    if (!req.file) {
-        return res.status(400).send('No file uploaded.');
-    }
-
-    res.send('File uploaded successfully: ' + req.file.path);
-});
-
-app.post('/stocks/upload-json', (req, res) => {
-    if (!req.body) {
-        return res.status(400).send('No file uploaded.');
-    }
-    const jsonData = req.body;
-    //const filePath = `uploads/${req.headers['filename']}`;
-    filePath = 'uploads/testing.csv'
-    const jsonString = JSON.stringify(jsonData);
-    fs.writeFile(filePath, jsonString, 'utf8', (err) => {
-        if (err) {
-            console.error('Error writing JSON to file:', err);
-            return res.status(500).json({ message: "Failed to write JSON data to file" });
-        }
-
-        res.status(200).json({ message: "JSON data written to file successfully" });
-    });
-});
-
 app.get('/stocks/get-csvs', (req, res) => {
-    const directoryPath = path.join('uploads');
+    const directoryPath = UPLOADS_DIR;
 
     if (!fs.existsSync(directoryPath)) {
         return res.status(404).send('Uploads directory not found.');
     }
 
     fs.readdir(directoryPath, (err, files) => {
-        files = files.filter(file => file != "history.csv");
-
         if (err) {
             console.error('Error reading directory:', err);
             return res.status(500).send('Error reading directory');
         } else {
+            files = files.filter(file => file.endsWith('.csv') && file != "history.csv");
             if (files.length === 0) {
                 return res.status(404).send('No files found in uploads directory.');
             } else {
@@ -91,11 +58,16 @@ app.get('/stocks/get-csvs', (req, res) => {
 });
 
 app.get('/stocks/get-csv/:filename', (req, res) => {
-    const filename = req.params.filename;
-    const filePath = path.join(__dirname, '../uploads', filename);
+    const filename = path.basename(req.params.filename);
+    if (!/^[\w. -]+\.csv$/.test(filename)) {
+        return res.status(400).send('Invalid filename');
+    }
+    const filePath = path.join(UPLOADS_DIR, filename);
+    if (path.dirname(filePath) !== UPLOADS_DIR) {
+        return res.status(400).send('Invalid filename');
+    }
     fs.access(filePath, fs.constants.F_OK, (err) => {
         if (err) {
-            console.error('File does not exist:', err);
             return res.status(404).send('File not found');
         } else {
             res.setHeader('Content-Type', 'text/csv');
@@ -109,6 +81,6 @@ app.get('/stocks/get-csv/:filename', (req, res) => {
 
 
 
-app.listen(4047, () => {
+app.listen(4047, '127.0.0.1', () => {
     console.log(`listening on port 4047`)
 })

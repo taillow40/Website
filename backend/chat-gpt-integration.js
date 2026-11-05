@@ -1,6 +1,5 @@
 const axios  = require('axios');
-const config = require('../config.js');
-const API_KEY = config.openai;
+const API_KEY = process.env.OPENAI_API_KEY;
 
 const openai = axios.create({
     baseURL: 'https://api.openai.com/v1/engines/gpt-3.5-turbo-instruct', 
@@ -21,7 +20,7 @@ async function callChatGPT(promptText) {
         console.log(response.data.choices[0].text.trim());
         return response.data.choices[0].text.trim();
     } catch (error) {
-        console.error('Error calling ChatGPT:', error.response.data);
+        console.error('Error calling ChatGPT:', error.response ? error.response.data : error.message);
     }
 }
 function chickenGpt(){
