@@ -2,4 +2,4 @@ config.js
 
 *.csv
 
-.gitignore
+.gitignorenode_modules/

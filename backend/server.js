@@ -2,38 +2,17 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const routes = require('./routes.js');
-const bp = require('body-parser');
-const ai = require('./chat-gpt-integration.js');
 const fs = require('fs');
 
 app.disable('x-powered-by');
 app.use('/', routes)
-app.use(bp.json({ limit: '10kb' }))
-app.use(bp.urlencoded({ extended: true, limit: '10kb' }))
 
 const UPLOADS_DIR = path.join(__dirname, '../uploads');
 app.use(express.static(path.join(__dirname, '../public')));
 
 app.post('/whatAmIEating', (req, res) => {
-    const fields = ['ingredient', 'cuisine', 'time'];
-    if (fields.some(f => req.body[f] !== undefined && (typeof req.body[f] !== 'string' || req.body[f].length > 50))) {
-        return res.status(400).send('Invalid input');
-    }
-    if (!req.body.ingredient) {
-        return res.status(400).send('Please enter an ingredient');
-    }
-    let prompt = `List only the names of 3 dishes whose main ingredient is ${req.body.ingredient}`
-    if (req.body.cuisine) {
-        prompt += ` in the ${req.body.cuisine} cuisine`
-    }
-    if (req.body.time) {
-        prompt += ` and can be made in around ${req.body.time}.`
-    }
-
-    ai.callChatGPT(prompt)
-        .then(response => res.send(response || 'Something went wrong, try again.'))
-        .catch(() => res.status(500).send('Something went wrong, try again.'));
-})
+    res.status(503).send('The meal maker is currently disabled.');
+});
 
 app.get('/stocks/get-csvs', (req, res) => {
     const directoryPath = UPLOADS_DIR;
